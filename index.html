@@ -39,6 +39,13 @@
                     <td> {{item.done}} </td>
                 </tr>
             </tbody>
+            <tr ng-repeat='item in todo.items' | checkedItems:showComplete>
+                <td> {{item.action}} </td>
+                <td><input type="checkbox" ng-model="item.done" name="" id=""></td>
+            </tr>
+            <div class="checkbox-inline">
+                <label><input type="checkbox" ng-model="showComplete" name="" id="">Show Complete</label>
+            </div>
         </table>
     </div>
     <script src="./assets/js/angular.min.js"></script>
@@ -54,6 +61,17 @@
             ]
         }
         var todoApp = angular.module("todoApp", []);
+        todoApp.filter('checkedItems', function () {
+            return function (items, showComplete) {
+                var resultArr = [];
+                angular.forEach(items, item => {
+                    if (item.done == false || showComplete == true) {
+                        resultArr.push(item);
+                    }
+                })
+                return resultArr;
+            }
+        })
         todoApp.controller("ToDoCtrl", $scope => {
             $scope.todo = modle;
 
@@ -72,6 +90,8 @@
             $scope.addNewItem = function (addItemName) {
                 $scope.todo.items.push({ action: addItemName, done: false });
             }
+
+
         })
     </script>
 </body>
