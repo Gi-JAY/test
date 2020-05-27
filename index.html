@@ -31,21 +31,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in todo.items">
-                    <td>{{item.action}}</td>
-                    <td>
-                        <input type="checkbox" ng-model="item.done">
-                    </td>
-                    <td> {{item.done}} </td>
+                <tr ng-repeat='item in todo.items | checkedItems:showComplete | orderBy:action'>
+                    <td> {{item.action}} </td>
+                    <td><input type="checkbox" ng-model="item.done" name="" id=""></td>
                 </tr>
+                <div class="checkbox-inline">
+                    <label><input type="checkbox" ng-model="showComplete" name="" id="">Show Complete</label>
+                </div>
             </tbody>
-            <tr ng-repeat='item in todo.items' | checkedItems:showComplete>
-                <td> {{item.action}} </td>
-                <td><input type="checkbox" ng-model="item.done" name="" id=""></td>
-            </tr>
-            <div class="checkbox-inline">
-                <label><input type="checkbox" ng-model="showComplete" name="" id="">Show Complete</label>
-            </div>
+
         </table>
     </div>
     <script src="./assets/js/angular.min.js"></script>
