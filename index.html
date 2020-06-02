@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="todoApp">
+<html lang="zh-TW" ng-app="todoApp">
 
 <head>
     <meta charset="UTF-8">
@@ -44,17 +44,19 @@
     </div>
     <script src="./assets/js/angular.min.js"></script>
     <script src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/axios.js"></script>
     <script>
-        var modle = {
+        var model = {
             user: "Adam",
-            items: [
-                { action: "Buy Flowers", done: false },
-                { action: "Get Shoes", done: true },
-                { action: "Collect Tickets", done: false },
-                { action: "Call Joe", done: false }
-            ]
         }
         var todoApp = angular.module("todoApp", []);
+
+        todoApp.run(function ($http) {
+            $http.get("todo.json").then(function (res) {
+                model.items = res.data;
+            })
+        })
+
         todoApp.filter('checkedItems', function () {
             return function (items, showComplete) {
                 var resultArr = [];
@@ -67,7 +69,7 @@
             }
         })
         todoApp.controller("ToDoCtrl", $scope => {
-            $scope.todo = modle;
+            $scope.todo = model;
 
             $scope.incompleteCount = function () {
                 var count = 0;
