@@ -1,0 +1,36 @@
+/* Scss Document */
+//*{border: 0.5px solid rgba(0,0,0,1.00)}
+body{}
+.main{
+	width: 1300px;
+	display: flex;
+	flex-wrap: nowrap;
+	aside{
+		width: 300px;
+		background-color: rgba(123,123,123,1.00);
+		padding: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		.item{
+			width: 140px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.sub-nav{
+			width: 100%;
+			background-color: #F3F3F3;
+		}
+	}
+	.content{
+		.slideshow{
+			background-image: url("../images/b/apple-606761.jpg");
+		}
+		width: 700px;
+		min-height: 300px;
+		background-color: #4FE6ED;
+	}
+}
+
+

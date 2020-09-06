@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <style>
+        * {
+            border: 1px solid #000000;
+        }
+    </style>
+    <div class="container-fluid" id="app">
+        <div class="alert alert-primary container-fluid" role="alert">
+            <div class="form-group">
+                <p class="text-center">新聞閱讀-依類別進行篩選</p>
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <select class="form-control col mr-5 " id="exampleFormControlSelect1" v-model="section">
+                            <option v-for="section in sections">
+                                {{section}}
+                            </option>
+                        </select>
+                        <button type="button" class="btn btn-primary col-1"
+                            @click="getPostsByCategory(section)">篩選</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" v-for="posts in results">
+            <div class="col-3" v-for="post in posts">
+                <div class="card mx-auto" style="width: 25rem;">
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert">
+                            <h5 class="card-title">{{post.title}}</h5>
+                        </div>
+                        <p class="card-text">{{post.abstract}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./assets/script/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const SECTION_TW = "食品, 運動, 科技"
+        new Vue({
+            el: '#app',
+            data: {
+                posts: [],
+                //results: [],
+                sections: SECTION_TW.split(', '),
+                section: '科技'
+            },
+            mounted() {
+                axios({
+                    methods: 'get',
+                    url: 'testjson.json'
+                })
+                    .then((res) => {
+                        this.posts = res.data;
+                        this.getPostsByCategory(this.section)
+                    })
+                    .catch(error => { console.log(error); });
+            },
+            computed: {
+                results() {
+                    let posts = this.posts
+                        .filter(post => post.category === this.section)
+                    let i, j, chunkArray = [], chunk = 4;
+                    for (i = 0, j = 0; i < posts.length; i += chunk, j++) {
+                        chunkArray[j] = posts.slice(i, i + chunk);
+                    }
+                    return chunkArray;
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

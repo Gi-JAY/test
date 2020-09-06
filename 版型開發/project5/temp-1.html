@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>無標題文件</title>
+	<link href="content/css/slider-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main">
+		<aside>
+			<div class="sub-nav">
+				<a href="javascript:;" class="btn" data-num="1"><img src="content/images/SVG/view_list-24px.svg"
+						alt=""></a>
+				<a href="javascript:;" class="btn" data-num="2"><img src="content/images/SVG/view_module-24px.svg"
+						alt=""></a>
+				<a href="javascript:;" class="btn" data-num="3"><img src="content/images/SVG/view_quilt-24px.svg"
+						alt=""></a>
+			</div>
+			<div class="item"><a href="javascript:;" data-name="apple-606761"><img
+						src="content/images/s/apple-606761.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="architecture-1314416"><img
+						src="content/images/s/architecture-1314416.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="architecture-1359707"><img
+						src="content/images/s/architecture-1359707.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="auto-1634815"><img
+						src="content/images/s/auto-1634815.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="business-3152586"><img
+						src="content/images/s/business-3152586.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="chairs-2181980"><img
+						src="content/images/s/chairs-2181980.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="computer-3368242"><img
+						src="content/images/s/computer-3368242.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="dahlia-1642457"><img
+						src="content/images/s/dahlia-1642457.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="eg49vttkdvi-hector-martinez"><img
+						src="content/images/s/eg49vttkdvi-hector-martinez.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="france-1790999"><img
+						src="content/images/s/france-1790999.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="freelancer-606762"><img
+						src="content/images/s/freelancer-606762.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="jisnvvs3keu-dan-stark"><img
+						src="content/images/s/jisnvvs3keu-dan-stark.jpg" alt=""></a></div>
+		</aside>
+		<div class="content">
+			<div class="slideshow">
+				<img src="content/images/b/apple-606761.jpg" alt="" height="657">
+				<img src="content/images/b/architecture-1314416.jpg" alt="" height="657">
+				<img src="content/images/b/architecture-1359707.jpg" alt="" height="657">
+				<img src="content/images/b/auto-1634815.jpg" alt="" height="657">
+				<img src="content/images/b/business-3152586.jpg" alt="" height="657">
+				<img src="content/images/b/chairs-2181980.jpg" alt="" height="657">
+				<img src="content/images/b/computer-3368242.jpg" alt="" height="657">
+				<img src="content/images/b/dahlia-1642457.jpg" alt="" height="657">
+				<img src="content/images/b/eg49vttkdvi-hector-martinez.jpg" alt="" height="657">
+				<img src="content/images/b/france-1790999.jpg" alt="" height="657">
+				<img src="content/images/b/freelancer-606762.jpg" alt="" height="657">
+				<img src="content/images/b/jisnvvs3keu-dan-stark.jpg" alt="" height="657">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="content/script/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			clickNum = 0
+			$('.btn').on('click', function () {
+				getNum = $(this).attr('data-num');
+				setNum = 100 / getNum;
+				$('.item').css({ 'width': setNum + "%" })
+			})
+
+			$('.item a').on('click', function () {
+				$('.slideshow img').hide();
+				$('.slideshow img').fadeIn();
+
+				//$('.slideshow').css({ 'top': '0px' });//重設TOP
+				if (clickNum == 0) {
+					clickNum=1;
+					getChildNum = $(this).parent().index() - 1;//取得item索引值
+					//console.log(getTop);
+					getSlideTop = $('.slideshow').offset().top;
+					getTop = $('.slideshow img').eq(getChildNum).offset().top;
+					setTop = getTop - getSlideTop;
+					$('.slideshow').animate({ top: '-' + setTop + 'px' }, 500, function () {
+						clickNum=0;
+					});
+				}
+
+
+			})
+		})
+	</script>
+</body>
+
+</html>

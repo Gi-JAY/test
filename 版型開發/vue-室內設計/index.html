@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="app">
+            <nav>
+                <h1>Gordon</h1>
+                <ul class="menu">
+                    <li v-for="menu in menus">
+                        <a href="javascript:;">{{menu.title}}</a>
+                        <ul class="menuList">
+                            <li v-for="item in menu.items">
+                                <a href="javascript:;">{{item}}</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <pre>
+                <h2>Gordon 高登室內設計<br>Interior Design</h2>
+            </pre>
+        </div>
+    </header>
+    <div class="well1">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+    </div>
+    <div class="well2">
+        <div class="item1">
+            <div class="imgbox">
+                <div class="colorbox"></div>
+            </div>
+            <h2>室內設計</h2>
+            <p>內容文字說明、<br>內容文字說明</p>
+        </div>
+        <div class="item2">
+            <div class="imgbox">
+                <div class="colorbox"></div>
+            </div>
+            <h2>商務空間</h2>
+            <p>內容文字說明、<br>內容文字說明</p>
+        </div>
+        <div class="item3">
+            <div class="imgbox">
+                <div class="colorbox"></div>
+            </div>
+            <h2>設計流程</h2>
+            <p>內容文字說明、<br>內容文字說明</p>
+        </div>
+        <div class="item4">
+            <div class="imgbox">
+                <div class="colorbox"></div>
+            </div>
+            <h2>成品展示</h2>
+            <p>內容文字說明、<br>內容文字說明</p>
+        </div>
+    </div>
+    <div class="well3">
+        <div class="colorbox">
+            <a href="javascript:;">
+                <h2>Information</h2>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <h1>高登室內設計<br>
+            Gordon
+            Interior Design</h1>
+        <div class="position">
+            <div class="box">
+                <h3>台北總公司</h3>
+                <p>
+                    台北市忠孝東路2段168號7樓<br>
+                    TEL：02-7901-0001
+                </p>
+            </div>
+            <div class="box">
+                <h3>新竹分公司</h3>
+                <p>
+                    新竹市忠孝東路2段168號7樓<br>
+                    TEL：02-7901-0001
+                </p>
+            </div>
+            <div class="box">
+                <h3>台中分公司</h3>
+                <p>
+                    台中市文心路2段168號7樓<br>
+                    TEL：04-7901-0001
+                </p>
+            </div>
+            <div class="box">
+                <h3>高雄分公司</h3>
+                <p>
+                    高雄市九如一路168號7樓<br>
+                    TEL：07-7901-001
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/script/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.app',
+            data: {
+                menus: [
+                    {
+                        title: "回首頁",
+                        items: [
+                            "選單1",
+                            "選單2",
+                            "選單3"
+                        ]
+                    },
+                    {
+                        title: "關於高登",
+                        items: [
+                            "選單1",
+                            "選單2",
+                            "選單3"
+                        ]
+                    },
+                    {
+                        title: "最新消息",
+                        items: [
+                            "選單1",
+                            "選單2",
+                            "選單3"
+                        ]
+                    },
+                    {
+                        title: "作品介紹",
+                        items: [
+                            "選單1",
+                            "選單2",
+                            "選單3"
+                        ]
+                    },
+                    {
+                        title: "聯絡我們",
+                        items: [
+                            "選單1",
+                            "選單2",
+                            "選單3"
+                        ]
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

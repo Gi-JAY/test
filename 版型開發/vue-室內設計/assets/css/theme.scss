@@ -1,0 +1,235 @@
+// * {
+//   border: 1px solid #000000;
+// }
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  min-width: 1000px;
+  font-family: "微軟正黑體";
+}
+@keyframes title {
+  0% {
+    padding-left: 1500px;
+    opacity: 0;
+  }
+  100% {
+    padding-left: 100px;
+    opacity: 1;
+  }
+}
+header {
+  height: 650px;
+  background-image: url(../img/office-1966381_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 60%;
+  overflow: hidden;
+  nav {
+    min-width: 1100px;
+    display: flex;
+    height: 60px;
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    background-color: #35a3d8;
+    border-radius: 20px 20px 20px 20px;
+    h1 {
+      flex: 0.2;
+      color: #ffffff;
+      font-size: 50px;
+      position: relative;
+      left: 20px;
+      bottom: 8px;
+    }
+    .menu > li {
+      margin-right: 25px;
+      margin-left: 25px;
+      max-width: 200px;
+    }
+    .menu {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      li {
+        list-style-type: none;
+        flex: 1;
+        font-size: 25px;
+        position: relative;
+        top: 25%;
+        text-align: center;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+        }
+      }
+      .menuList {
+        margin-top: 10px;
+        visibility: hidden;
+        background-color: #35a3d8;
+      }
+    }
+    .menu > li:hover {
+      .menuList {
+        visibility: visible;
+      }
+      .menuList > li > a:hover {
+        color: #f0ff1f;
+      }
+    }
+    .menu > li > a:hover {
+      color: #f0ff1f;
+    }
+  }
+  h2 {
+    font-size: 80px;
+    padding-top: 100px;
+    padding-left: 100px;
+    animation-name: title;
+    animation-duration: 4s;
+  }
+}
+.well1 {
+  max-width: 1800px;
+  display: flex;
+  width: 85%;
+  height: 300px;
+  margin: auto;
+  position: relative;
+  bottom: 50px;
+  background-color: #ffffff;
+  .item1,
+  .item2,
+  .item3 {
+    flex: 1;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .item1 {
+    flex: 2;
+    margin: 25px;
+    background-image: url(../img/computer-2593921.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .item2 {
+    margin: 25px 0 25px 0;
+    background-image: url(../img/books-1840463.jpg);
+  }
+  .item3 {
+    margin: 25px;
+    background-image: url(../img/chairs-2181980.jpg);
+  }
+}
+.well2 {
+  height: 360px;
+  margin: auto;
+  max-width: 1800px;
+  display: flex;
+  position: relative;
+  bottom: 50px;
+  .item1,
+  .item2,
+  .item3,
+  .item4 {
+    flex: 1;
+    .imgbox {
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 25px;
+      max-width: 100%;
+      max-height: 100%;
+      width: 230px;
+      height: 230px;
+      background-size: cover;
+      .colorbox {
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        background-color: rgba(99, 99, 99, 0);
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  .item1 > .imgbox {
+    background-image: url(../img/architecture-1727807.jpg);
+  }
+  .item2 > .imgbox {
+    background-image: url(../img/chairs-2181980.jpg);
+  }
+  .item3 > .imgbox {
+    background-image: url(../img/office-1078869.jpg);
+  }
+  .item4 > .imgbox {
+    background-image: url(../img/workstation-405768.jpg);
+    background-position: center;
+  }
+  .imgbox:hover {
+    transform: scale(1.1);
+    .colorbox {
+      background-color: rgba(99, 99, 99, 0.5);
+    }
+  }
+}
+.well3 {
+  height: 300px;
+  background-image: url(../img/office-space-1744803.jpg);
+  background-size: cover;
+  background-position: center;
+  .colorbox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(83, 215, 238, 0.3);
+    a {
+      width: 800px;
+      height: 300px;
+      text-decoration: none;
+      h2 {
+        padding-top: 80px;
+        text-align: center;
+        font-size: 100px;
+        color: #ffffff;
+        letter-spacing: 10px;
+      }
+    }
+    a:hover {
+      h2 {
+        color: #f0ff1f;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+footer {
+  height: 550px;
+  background-color: #35a3d8;
+  h1 {
+    margin: 0px;
+    font-size: 50px;
+    padding: 90px 0 0 56px;
+    color: #ffffff;
+  }
+  .position {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 80px;
+    .box {
+      flex: 0.2;
+      h3 {
+        font-size: 30px;
+        color: #ffffff;
+      }
+      p {
+        font-size: 25px;
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>無標題文件</title>
+	<link href="content/css/slider-2-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main">
+		<aside>
+			<div class="sub-nav">
+				<a href="javascript:;" class="btn" data-num="1"><img src="content/images/SVG/view_list-24px.svg"
+						alt=""></a>
+				<a href="javascript:;" class="btn" data-num="2"><img src="content/images/SVG/view_module-24px.svg"
+						alt=""></a>
+				<a href="javascript:;" class="btn" data-num="3"><img src="content/images/SVG/view_quilt-24px.svg"
+						alt=""></a>
+			</div>
+			<div class="item"><a href="javascript:;" data-name="apple-606761"><img
+						src="content/images/s/apple-606761.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="architecture-1314416"><img
+						src="content/images/s/architecture-1314416.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="architecture-1359707"><img
+						src="content/images/s/architecture-1359707.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="auto-1634815"><img
+						src="content/images/s/auto-1634815.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="business-3152586"><img
+						src="content/images/s/business-3152586.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="chairs-2181980"><img
+						src="content/images/s/chairs-2181980.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="computer-3368242"><img
+						src="content/images/s/computer-3368242.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="dahlia-1642457"><img
+						src="content/images/s/dahlia-1642457.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="eg49vttkdvi-hector-martinez"><img
+						src="content/images/s/eg49vttkdvi-hector-martinez.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="france-1790999"><img
+						src="content/images/s/france-1790999.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="freelancer-606762"><img
+						src="content/images/s/freelancer-606762.jpg" alt=""></a></div>
+			<div class="item"><a href="javascript:;" data-name="jisnvvs3keu-dan-stark"><img
+						src="content/images/s/jisnvvs3keu-dan-stark.jpg" alt=""></a></div>
+		</aside>
+		<div class="content">
+			<div class="slideshow">
+				<img src="content\images\b\apple-606761.jpg" alt="" class="img">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="content/script/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.btn').on('click', function () {
+				getNum = $(this).attr('data-num');
+				setNum = 100 / getNum;
+				$('.item').css({ 'width': setNum + "%" })
+			})
+			$('.item a').on('click', function () {
+				imgName = $(this).attr('data-name');
+				setImgName = 'content/images/b/' + imgName + '.jpg';
+				$('.slideshow').append('<img src="' + setImgName + '" alt="" class="img">');
+				$('.slideshow').animate({ top: '-657px' }, 500,function(){
+					$('.slideshow .img').eq(0).remove();
+					$('.slideshow').css({ 'top': '0px' });
+				});   
+				
+			})
+		})
+				//				$('.slideshow img').attr('src',setImgName);
+
+				//$('.slideshow').after('<div class="testbox" >123</div>'); //新增元素可行
+				//$('.slideshow').append('<div class="testbox" >456</div>');//新增元素可行
+				//$('.content').find('.slideshow img').eq(2).remove();  //刪除指定元素可行
+				//chNum=$('.item').children();
+				//console.log(chNum);
+				//chNumCounter=chNum.length;
+				//console.log($(this).parent().index());//抓取目前順序的索引值
+
+				//scrollHeight=653;
+				//setScrollHeight=scrollHeight*getChildNum;
+				//$('.slideshow').css('top','-'+setScrollHeight+'px');
+				/*
+					after之後
+					before之前
+				*/
+				/*
+					目的:
+					1.按下按鈕時增加B元件，A元件與B元件同時上移
+					2.A元件滑動到上方固定位置後，移除，保留B元件
+					3.重複1、2的動作
+					事件:
+					1)增加元件
+					2)網上滑動
+					3)刪除元件
+				*/
+	</script>
+</body>
+
+</html>

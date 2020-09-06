@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="content\css\menu.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Coffee Time</div>
+    </nav>
+    <div class="wrap">
+        <div class="slide-menu">
+            <div class="swtich-area">
+                <a href="javascript:;" class="open-btn">開啟</a>
+                <a href="javascript:;" class="close-btn">關閉</a>
+            </div>
+            <ul class="top-nav">
+                <li><a href="javascript:;">關於我們</a></li>
+                <li><a href="javascript:;">最新消息</a></li>
+                <li><a href="javascript:;">產品介紹</a></li>
+                <li><a href="javascript:;">技術支援</a></li>
+                <li><a href="javascript:;">聯絡我們</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+
+    </header>
+    <div class="well1"></div>
+    <div class="info"></div>
+    <footer></footer>
+    <script src="content\script\jquery-3.3.1.min.js"></script>
+
+    <!-- 開啟按鈕事件 open-btn
+        1.如何讓選單滑進畫面
+        
+        關閉選單的按鈕事件 close-btn 
+        2.如何讓選單離開畫面
+
+        3.按鈕之間顯示與隱藏如何設定
+    -->
+
+    <script>
+        $(document).ready(function(){
+            $('.open-btn').on('click',function(){
+                $(this).hide();
+                $('.close-btn').show();
+                $('.slide-menu').css('height','420px');
+                $('.slide-menu').animate({
+                    right:'-50px'
+                },1000);
+            })
+            $('.close-btn').on('click',function(){
+                $(this).hide();
+                $('.open-btn').show();
+                $('.slide-menu').animate({
+                    right:'-420px'
+                },1000,function(){
+                    $('.slide-menu').css('height','100px');
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

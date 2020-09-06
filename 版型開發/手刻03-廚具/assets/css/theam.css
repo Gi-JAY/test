@@ -1,0 +1,1165 @@
+@charset "UTF-8";
+body {
+  font-family: "微軟正黑體";
+  padding: 0;
+  margin: 0 auto 0 auto;
+}
+
+header {
+  border: 1px #ffffff solid;
+  height: 650px;
+}
+
+header .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+  position: absolute;
+  right: 10%;
+  bottom: 45%;
+}
+
+header .social img {
+  margin: 0 0 20px 0;
+}
+
+header .play,
+header .pause {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+}
+
+header .slideShow {
+  height: 650px;
+  overflow: hidden;
+}
+
+header .slideShow .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 650px;
+}
+
+header .slideShow .slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  width: 100%;
+}
+
+header nav {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(66, 195, 255, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav .topNav {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: 10%;
+}
+
+header nav .topNav li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+header nav .topNav li .navMenu {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  display: none;
+}
+
+header nav .topNav li .navMenu ul {
+  padding: 0px;
+  list-style: none;
+  background-color: rgba(66, 195, 255, 0.6);
+}
+
+header nav .topNav li .navMenu ul li {
+  list-style: none;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+header nav .topNav li .navMenu ul li a {
+  color: #ffffff;
+}
+
+header nav .topNav li .navMenu ul li:hover a {
+  color: #ffba25;
+}
+
+header nav .topNav li a {
+  width: 100%;
+  position: relative;
+  padding: auto;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+header nav .topNav li:hover a {
+  color: #ffba25;
+}
+
+header nav p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  bottom: 20%;
+  left: 5%;
+  color: #6163f0;
+}
+
+header nav .searchBox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  float: left;
+}
+
+header nav .searchBox .box {
+  width: 70%;
+  height: 80%;
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+header nav .searchBox .box form {
+  width: 100%;
+  height: 100%;
+}
+
+header nav .searchBox .box form input {
+  background-color: rgba(0, 0, 0, 0.26);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 6px;
+  border: 0 none;
+  color: #ffffff;
+  padding: 0 50px 0 3%;
+}
+
+header nav .searchBox .box img {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+header .phoneBox {
+  display: none;
+}
+
+header .phoneMenu {
+  display: none;
+}
+
+.well1 {
+  height: 700px;
+  min-width: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.well1 .imgBox {
+  width: 35%;
+  padding-bottom: 25%;
+  margin: 50px 50px 50px 50px;
+  overflow: hidden;
+}
+
+.well1 .imgBox img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  -webkit-transform: scale(0.6) translate(-50%, -40%);
+          transform: scale(0.6) translate(-50%, -40%);
+}
+
+.well1 .textBox {
+  width: 35%;
+  padding-bottom: 1%;
+  margin: 50px 50px 50px 50px;
+  overflow: scroll;
+}
+
+.well1 .box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.well1 .box1 img {
+  margin-right: 10px;
+}
+
+.well1 .box1 h2 {
+  font-size: 40px;
+  letter-spacing: 15px;
+  margin: 0;
+}
+
+.well1 p {
+  font-size: 20px;
+}
+
+.well2 {
+  height: 700px;
+  min-width: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.well2 .imgBox {
+  width: 35%;
+  padding-bottom: 1%;
+  margin: 50px 50px 50px 50px;
+  overflow: hidden;
+}
+
+.well2 .imgBox img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  -webkit-transform: scale(0.6) translate(-50%, -40%);
+          transform: scale(0.6) translate(-50%, -40%);
+}
+
+.well2 .textBox {
+  width: 35%;
+  padding-bottom: 1%;
+  margin: 50px 50px 50px 50px;
+  overflow: scroll;
+}
+
+.well2 .textBox .box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.well2 .textBox .box1 img {
+  margin-right: 10px;
+}
+
+.well2 .textBox .box1 h2 {
+  font-size: 40px;
+  letter-spacing: 15px;
+  margin: 0;
+}
+
+.well2 .textBox2 {
+  display: none;
+  width: 35%;
+  padding-bottom: 1%;
+  margin: 50px 50px 50px 50px;
+  overflow: scroll;
+}
+
+.well2 .textBox2 .box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.well2 .textBox2 .box1 img {
+  margin-right: 10px;
+}
+
+.well2 .textBox2 .box1 h2 {
+  font-size: 40px;
+  letter-spacing: 15px;
+  margin: 0;
+}
+
+.well2 p {
+  font-size: 20px;
+}
+
+.well3 {
+  height: 700px;
+  background-color: #7ecef4;
+}
+
+.well3 .titleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5%;
+}
+
+.well3 .titleBox img {
+  margin-right: 10px;
+}
+
+.well3 .titleBox h2 {
+  font-size: 40px;
+  letter-spacing: 15px;
+  margin: 0;
+}
+
+.well3 .itemBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.well3 .itemBox .box {
+  width: 20%;
+  height: 0px;
+  padding-bottom: 25%;
+  background-color: #ffffff;
+}
+
+.well3 .itemBox .box .imgBox {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 60%;
+  border-radius: 0 10% 10% 0;
+  margin: 5% 0 0 12%;
+}
+
+.well3 .itemBox .box .imgBox img {
+  position: absolute;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.well3 .itemBox .box .itemBox1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 45%;
+}
+
+.well3 .itemBox .box .itemBox1 h3 {
+  margin: 15% 0 auto 0;
+  font-size: 45px;
+  text-align: center;
+}
+
+.well3 .itemBox .box .itemBox1 a {
+  text-decoration: none;
+}
+
+.well3 .itemBox .box .itemBox1 a .circleBox {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 30% 0 auto 0;
+  background-color: red;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.well3 .itemBox .box .itemBox1 a .circleBox p {
+  font-size: 30px;
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+  letter-spacing: 6px;
+  text-decoration: none;
+  margin: 0px;
+  position: relative;
+  top: 35%;
+}
+
+.well3 .itemBox .box .itemBox1 a .circleBox:hover {
+  background-color: chocolate;
+}
+
+.well3 .itemBox .box .itemBox1 a .circleBox:hover p {
+  color: #000000;
+}
+
+.well3 .w3PhoneBox {
+  display: none;
+}
+
+.well3 .moreLink {
+  display: none;
+}
+
+.well4 {
+  height: 900px;
+}
+
+.well4 .moreLink {
+  display: none;
+}
+
+.well4 .phoneMenu {
+  display: none;
+}
+
+.well4 .titleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1%;
+}
+
+.well4 .titleBox img {
+  margin-right: 10px;
+}
+
+.well4 .titleBox h2 {
+  margin: 0%;
+  font-size: 40px;
+  letter-spacing: 15px;
+}
+
+.well4 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.well4 .menu .itemBox {
+  border: 1px solid #ffffff;
+  width: 25%;
+  margin: 1% 0 0;
+}
+
+.well4 .menu .itemBox .imgBox {
+  position: relative;
+  padding-bottom: 0%;
+  overflow: hidden;
+  margin: 0 0 5%;
+}
+
+.well4 .menu .itemBox .imgBox img {
+  width: 100%;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.well4 .menu .itemBox .imgBox .colorBox {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  padding-bottom: 76%;
+  top: 0;
+  background-color: rgba(243, 190, 91, 0.4);
+  visibility: hidden;
+}
+
+.well4 .menu .itemBox .imgBox:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.well4 .menu .itemBox .imgBox:hover .colorBox {
+  visibility: visible;
+}
+
+.well4 .menu .itemBox h3 {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 6px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.well4 .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3% 0;
+}
+
+.well4 .btn a {
+  text-align: center;
+  text-decoration: none;
+  background-color: #7ecef4;
+  border-radius: 10px;
+  font-size: 30px;
+  letter-spacing: 6px;
+  padding: 0 1% 0 1%;
+  color: #000000;
+  font-weight: bold;
+}
+
+.well4 .btn a:hover {
+  color: yellow;
+}
+
+.well5 {
+  background-color: #ffba25;
+  margin: 10% 0 0 0;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.well5 .info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  width: 100%;
+  margin: 5% 15%;
+  padding-left: 5%;
+}
+
+.well5 .info .titleBox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.well5 .info .titleBox img {
+  margin-right: 10px;
+}
+
+.well5 .info .titleBox h3 {
+  font-size: 40px;
+  letter-spacing: 15px;
+}
+
+.well5 .info ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 5% 0 0 5%;
+}
+
+.well5 .info ul li {
+  font-size: 30px;
+}
+
+.well5 .info ul li img {
+  position: relative;
+  top: 5px;
+}
+
+.well5 .map {
+  width: 40%;
+  padding-bottom: 2%;
+  margin: 5% 0% 0 0%;
+}
+
+footer {
+  border: 1px #000000 solid;
+  height: 250px;
+  background-color: #000000;
+}
+
+footer h3,
+footer p {
+  margin: 1% 0;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 6px;
+}
+
+footer h3 {
+  font-size: 50px;
+}
+
+footer p {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1650px) {
+  .well3 {
+    height: 700px;
+    background-color: #7ecef4;
+  }
+  .well3 .itemBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .well3 .itemBox .box {
+    width: 20%;
+    height: 0px;
+    padding-bottom: 25%;
+    background-color: #ffffff;
+  }
+  .well3 .itemBox .box .itemBox1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 45%;
+  }
+  .well3 .itemBox .box .itemBox1 h3 {
+    margin: 15% 0 auto 0;
+    font-size: 35px;
+    text-align: center;
+  }
+  .well3 .itemBox .box .itemBox1 a {
+    text-decoration: none;
+  }
+  .well3 .itemBox .box .itemBox1 a .circleBox {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 30% 0 auto 0;
+    background-color: red;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .well3 .itemBox .box .itemBox1 a .circleBox p {
+    font-size: 30px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    letter-spacing: 6px;
+    text-decoration: none;
+    margin: 0px;
+    position: relative;
+    top: 32%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .well3 {
+    height: 600px;
+  }
+  .well3 .itemBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .well3 .itemBox .box {
+    width: 20%;
+    height: 0px;
+    padding-bottom: 25%;
+    background-color: #ffffff;
+  }
+  .well3 .itemBox .box .itemBox1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 45%;
+  }
+  .well3 .itemBox .box .itemBox1 h3 {
+    margin: 15% 0 auto 0;
+    font-size: 25px;
+    text-align: center;
+  }
+  .well3 .itemBox .box .itemBox1 a {
+    text-decoration: none;
+  }
+  .well3 .itemBox .box .itemBox1 a .circleBox {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 30% 0 auto 0;
+    background-color: red;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .well3 .itemBox .box .itemBox1 a .circleBox p {
+    font-size: 20px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    letter-spacing: 6px;
+    text-decoration: none;
+    margin: 0px;
+    position: relative;
+    top: 32%;
+  }
+  .well4 {
+    height: 800px;
+  }
+  .well5 {
+    display: block;
+    height: 1000px;
+  }
+  .well5 .info {
+    width: 500px;
+    padding: 0;
+    position: relative;
+    left: 15%;
+  }
+  .well5 .map {
+    height: 40%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .well1 {
+    min-width: none;
+  }
+  .well2 {
+    min-width: none;
+  }
+  .well3 {
+    height: 500px;
+  }
+  .well4 {
+    height: 700px;
+  }
+  .well5 {
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .well3 {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .well3 {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 400px;
+  }
+  header .play {
+    top: 270px;
+  }
+  header .pause {
+    top: 270px;
+  }
+  header .social {
+    right: 20px;
+    top: 360px;
+  }
+  header .slideShow {
+    height: 550px;
+  }
+  header .slideShow .slide img {
+    position: relative;
+  }
+  header nav {
+    display: block;
+  }
+  header nav p {
+    font-size: 20px;
+    position: relative;
+    left: 0px;
+    bottom: 5px;
+  }
+  header nav .topNav {
+    display: none;
+  }
+  header nav .searchBox {
+    position: relative;
+  }
+  header nav .searchBox img {
+    padding: 0 0 0 25%;
+  }
+  header .phoneBox {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 70px;
+    background-color: #44c0fa;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  header .phoneBox a {
+    position: relative;
+  }
+  header .phoneBox a img {
+    position: relative;
+    right: 0px;
+    margin: auto 5px 0 5px;
+  }
+  header .phoneMenu {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    background-color: #44c0fa;
+    height: 45%;
+    width: 100%;
+    top: 100px;
+  }
+  header .phoneMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  header .phoneMenu ul li {
+    padding: 2% 0 0 10%;
+    height: 100%;
+  }
+  header .phoneMenu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+  header .phoneMenu ul li:hover a {
+    color: yellow;
+  }
+  .well1 {
+    min-width: 0px;
+    width: 100%;
+  }
+  .well1 .imgBox {
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 0px;
+    padding-bottom: 100%;
+  }
+  .well1 .imgBox img {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    -webkit-transform: scale(1.75) translate(0, 20%);
+            transform: scale(1.75) translate(0, 20%);
+  }
+  .well1 .textBox {
+    display: none;
+  }
+  .well2 {
+    min-width: 0px;
+    display: block;
+    height: 500px;
+  }
+  .well2 .imgBox {
+    display: none;
+  }
+  .well2 .textBox {
+    width: 100%;
+    height: 414px;
+    margin: 0;
+  }
+  .well3 {
+    height: 450px;
+  }
+  .well3 .itemBox {
+    display: none;
+  }
+  .well3 .slideShow {
+    overflow: scroll;
+    position: relative;
+    width: 320px;
+    margin: 0 auto 0 auto;
+    padding: 0;
+  }
+  .well3 .slideShow .slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+  }
+  .well3 .slideShow .slide .w3PhoneBox {
+    display: block;
+    width: 75%;
+    height: 286px;
+    position: relative;
+    background-color: #ffffff;
+    left: 8px;
+    margin: 0 10% 0 10%;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .imgBox {
+    overflow: hidden;
+    position: relative;
+    width: 245px;
+    height: 140px;
+    border-radius: 0 10% 10% 0;
+    margin: 5% 0 0 12%;
+    top: 10px;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .imgBox img {
+    position: absolute;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 45%;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 h3 {
+    margin: 15% 0 auto 0;
+    font-size: 25px;
+    text-align: center;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 a {
+    text-decoration: none;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 a .circleBox {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 30% 0 auto 0;
+    background-color: red;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 a .circleBox p {
+    font-size: 30px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    letter-spacing: 6px;
+    text-decoration: none;
+    margin: 0px;
+    position: relative;
+    top: 30%;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 a .circleBox:hover {
+    background-color: chocolate;
+  }
+  .well3 .slideShow .slide .w3PhoneBox .itemBox1 a .circleBox:hover p {
+    color: #000000;
+  }
+  .well3 .moreLink {
+    display: block;
+    width: 100%;
+  }
+  .well3 .moreLink ul {
+    position: relative;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    right: 20px;
+  }
+  .well3 .moreLink ul li {
+    padding: 0 10px 0 10px;
+  }
+  .well4 {
+    height: 1100px;
+  }
+  .well4 .menu {
+    display: none;
+  }
+  .well4 .slideshow {
+    overflow: hidden;
+    height: 920px;
+  }
+  .well4 .slideshow .slide {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .well4 .phoneMenu {
+    display: block;
+    width: 70%;
+    margin: 0 10% 0 10%;
+    position: relative;
+    left: 5%;
+  }
+  .well4 .phoneMenu .itemBox {
+    border: 1px solid #ffffff;
+    width: 100%;
+    margin: 0 auto 0 auto;
+  }
+  .well4 .phoneMenu .itemBox .imgBox {
+    position: relative;
+    width: 290px;
+    height: 220px;
+    overflow: hidden;
+    margin: 30px auto 10px auto;
+  }
+  .well4 .phoneMenu .itemBox .imgBox img {
+    width: 100%;
+    position: relative;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .well4 .phoneMenu .itemBox .imgBox .colorBox {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    padding-bottom: 76%;
+    top: 0;
+    background-color: rgba(243, 190, 91, 0.4);
+    visibility: hidden;
+  }
+  .well4 .phoneMenu .itemBox .imgBox:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .well4 .phoneMenu .itemBox .imgBox:hover .colorBox {
+    visibility: visible;
+  }
+  .well4 .phoneMenu .itemBox h3 {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 6px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+  .well4 .moreLink {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .well4 .moreLink ul {
+    position: relative;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    right: 20px;
+  }
+  .well4 .moreLink ul li {
+    padding: 0 10px 0 10px;
+  }
+  .well5 {
+    height: 550px;
+    overflow-x: hidden;
+  }
+  .well5 .info {
+    margin: 0;
+  }
+  .well5 .info ul {
+    margin: -10% 0% 10% 0;
+    position: relative;
+    right: 50px;
+  }
+  .well5 .info ul li {
+    font-size: 25px;
+  }
+  .well5 .map {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 0 auto;
+  }
+  footer {
+    height: 140px;
+  }
+  footer h3,
+  footer p {
+    margin: 1% 0;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 6px;
+  }
+  footer h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  footer p {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=theam.css.map */

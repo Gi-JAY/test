@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<link href="content/css/slider-3-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main">
+	<aside>
+		<div class="sub-nav">
+			<a href="javascript:;" class="btn1" data-num="1"><img src="content/images/SVG/view_list-24px.svg" alt=""/></a>
+			<a href="javascript:;" class="btn1" data-num="2"><img src="content/images/SVG/view_module-24px.svg" alt=""/></a>
+			<a href="javascript:;" class="btn1" data-num="3"><img src="content/images/SVG/view_quilt-24px.svg" alt=""/></a>
+	  </div>
+		<div class="item">
+			<a href="javascript:;" data-name="apple-606761" data-title="Apple-606761">
+				<img src="content/images/s/apple-606761.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="architecture-1314416" data-title="Architecture-1314416">
+				<img src="content/images/s/architecture-1314416.jpg" width="200" height="131" alt=""/></a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="architecture-1359707" data-title="Architecture-1359707">
+				<img src="content/images/s/architecture-1359707.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="auto-1634815" data-title="Auto-1634815">
+				<img src="content/images/s/auto-1634815.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="business-3152586" data-title="Business-3152586">
+				<img src="content/images/s/business-3152586.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="chairs-2181980" data-title="Chairs-2181980">
+				<img src="content/images/s/chairs-2181980.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="computer-3368242" data-title="Computer-3368242">
+				<img src="content/images/s/computer-3368242.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="dahlia-1642457" data-title="Dahlia-1642457">
+				<img src="content/images/s/dahlia-1642457.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="eg49vttkdvi-hector-martinez" data-title="Eg49vttkdvi-hector-martinez">
+				<img src="content/images/s/eg49vttkdvi-hector-martinez.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="france-1790999" data-title="France-1790999">
+				<img src="content/images/s/france-1790999.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="freelancer-606762" data-title="Freelancer-606762">
+				<img src="content/images/s/freelancer-606762.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		<div class="item">
+			<a href="javascript:;" data-name="jisnvvs3keu-dan-stark" data-title="Jisnvvs3keu-dan-stark">
+				<img src="content/images/s/jisnvvs3keu-dan-stark.jpg" width="200" height="131" alt=""/>
+			</a>
+		</div>
+		
+	</aside>
+	<div class="content">
+		<div class="slideshow">
+			<div class="testBox">
+				<img src="content/images/b/apple-606761.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="content/script/jquery-3.3.1.min.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			clickNum=0;
+			//$(".slideshow").scrollTop(-1000);
+			//alert(1);
+			//note 切換功能用途
+			$(".btn1").on("click",function(){
+				getNum=$(this).attr("data-num");
+				setNum=100/getNum;
+				//console.log(100/getNum);
+				//console.log(setNum);
+				$(".item").css("width",setNum+"%");
+				
+				switch(getNum){
+					case '1':
+						$('aside').css({'overflow': 'scroll'});
+						break;
+					case '2':
+						break;
+					case '3':		
+				}
+			})
+			//note 變更圖片效果 content/images/s/
+			$(".item").find("a").on("click",function(){
+				
+//				 imgName=$(this).attr("data-name");
+//				 setImgName="content/images/b/"+imgName+".jpg";
+//				 $(".slideshow-img").attr("src",setImgName);
+				
+				
+				//$(".slideshow").find(".testBox").remove();
+				//$(".slideshow").find("#1").remove();  --移除可行
+				//$(".slideshow").append($(".testBox")); --失敗
+				
+				
+				//#1) $(".testBox").after("<div class='testBox'>456</div>"); --可行
+				//#3) $(".slideshow").find(".testBox").eq(0).remove(); --刪除指定元素可行
+				
+				/*
+				after 之後
+				before 之前
+				*/
+				/*
+				目的：
+					1.按下按鈕時增加B元件，A元件與B元件同時上移
+					2.A元件滑動到上方固定位置後，移除，保留B元件。
+					3.重複1-2動作
+				
+				事件：
+					1)增加元件 V
+					2)往上滑動 VVV
+					3)刪除元件 
+				
+				*/
+				
+				//$(".textBox").css("top","-650px");
+
+				//$(".testBox").attr("src",setImgName);
+				/*
+				$( "p" ).remove(); 移除元素
+				$( "li" ).add( "p" ).css( "background-color", "red" ); 加入元素
+				$( ".container" ).append( $( "h2" ) ); 加入元素 - 替代方案
+				*/
+				//console.log(clickNum);
+				if(clickNum==0){
+					clickNum=1;
+					//console.log(clickNum);
+					$(".slideshow").append("<div class='testBox'><img width='200' height='131' alt=''/></div>");
+					setName = "content/images/b/" + $(this).attr("data-name") + ".jpg";
+					$('.testBox').find('img').eq(1).attr("src",setName);
+					$('.slideshow').animate({
+						top:'-650px'
+					},500,function(){
+						$('.slideshow').css("top","0px");
+						$('.slideshow .testBox').eq(0).remove();
+						clickNum=0;
+					})
+				}	
+			})
+			
+		})
+	
+	</script>
+
+</body>
+</html>

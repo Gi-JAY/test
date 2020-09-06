@@ -1,0 +1,142 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+}
+
+nav, header, .well1, .info, footer {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav {
+  height: 100%;
+  background-color: #87ec83;
+}
+
+nav .logo {
+  height: 50px;
+  font-size: 30px;
+  padding-top: 15px;
+}
+
+.slide-menu {
+  position: relative;
+  height: 100px;
+  right: -420px;
+}
+
+.slide-menu .close-btn {
+  display: none;
+  text-decoration: none;
+}
+
+.slide-menu .open-btn {
+  text-decoration: none;
+}
+
+.slide-menu .top-nav {
+  background-color: white;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  padding-right: 60px;
+}
+
+.slide-menu .top-nav li a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.swtich-area {
+  width: 50px;
+  position: absolute;
+  left: -40px;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #65bcd6;
+  height: 150px;
+}
+
+.well1 {
+  background-color: #fbff28;
+  height: 450px;
+}
+
+.info {
+  background-color: #9242b8;
+  height: 200px;
+}
+
+footer {
+  background-color: #d65252;
+  height: 400px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+  }
+  nav, header, .well1, .info, footer {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  nav {
+    height: 100px;
+    overflow-x: hidden;
+    background-color: white;
+  }
+  nav .logo {
+    height: 50px;
+    font-size: 30px;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+  nav .top-nav {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    right: -420px;
+  }
+  nav .top-nav li a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+  }
+  header {
+    background-color: #65bcd6;
+    height: 150px;
+  }
+  .well1 {
+    background-color: #fbff28;
+    height: 450px;
+  }
+  .info {
+    background-color: #9242b8;
+    height: 200px;
+  }
+  footer {
+    background-color: #d65252;
+    height: 400px;
+  }
+}
+/*# sourceMappingURL=menu.css.map */

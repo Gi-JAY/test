@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Hello, world!</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="jumbotron jumbotron-fluid">
+            <h1 class="display-3 text-center">簡易記事本</h1>
+            <p class="lead text-center">透過左側的新增，右側列清單及刪除功能來管理技士</p>
+            <hr class="my-2">
+        </div>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header bg-info">
+                            <h3 class="card-title ">新增記事</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">摘要</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="請填入記事摘要" v-model="newNote.name">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">內容</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="請填入內容摘要"
+                                        v-model="newNote.content">
+                                </div>
+                                <a href="#" class="btn btn-primary mx-auto" @click="addNote(note)">新增</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <table class="table table-striped">
+                        <h3 class="text-center">清單</h3>
+                        <thead>
+                            <th>名稱</th>
+                            <th>內容</th>
+                            <th>操作</th>
+                        </thead>
+                        <tbody>
+                            <tr v-for='note in notes'>
+                                <td> {{note.name}} </td>
+                                <td> {{note.content}} </td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal" @click='selectNote(note)'>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        刪除{{noteSlected.name}}
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    是否刪除會議:{{noteSlected.content}}?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">放棄</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        @click='deleteNote(noteSlected)'>刪除</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./assets/script/vue.js"></script>
+    <script src="https://kit.fontawesome.com/2a0b26ba40.js" crossorigin="anonymous"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                notes: JSON.parse(localStorage.getItem('notes')) || [],
+                newNote: {
+                    neme: '',
+                    content: ''
+                },
+                noteSlected: {
+                    name: '',
+                    content: ''
+                }
+            },
+            methods: {
+                selectNote(note) {
+                    this.noteSlected.name = note.name
+                    this.noteSlected.content = note.content
+                },
+                addNote() {
+                    if (this.newNote.name == '' || this.newNote.content == '') {
+                        alert('請填入摘要與內容');
+                        return
+                    }
+                    const note = {
+                        name: this.newNote.name,
+                        content: this.newNote.content,
+                        created: new Date()
+                    }
+                    this.notes.push(note);
+                    this.newNote.name = ''
+                    this.newNote.content = ''
+                },
+
+                deleteNote(note) {
+                    var found = false;
+                    for (var i = 0; i < this.notes.length; i++) {
+                        if (this.notes[i].name == note.name) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) {
+                        this.notes.splice(i, 1)
+                    }
+                    $('#exampleModal').modal('hide')
+                }
+
+            },
+            watch: {
+                notes: {
+                    handler() {
+                        localStorage.setItem('notes', JSON.stringify(this.notes))
+                        console.log('以儲存', new Date())
+                    },
+                    immediate: true
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

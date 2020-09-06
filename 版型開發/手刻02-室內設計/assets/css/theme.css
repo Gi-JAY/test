@@ -1,0 +1,362 @@
+@charset "UTF-8";
+@-webkit-keyframes headerLogo {
+  0% {
+    opacity: 0.3;
+    left: 2000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+@keyframes headerLogo {
+  0% {
+    opacity: 0.3;
+    left: 2000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+body {
+  font-family: "微軟正黑體";
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  min-width: 1800px;
+  height: 550px;
+  background-image: url("../img/office-1966381_1920.jpg");
+  border: 1px #ffffff solid;
+  background-position: center 50%;
+  overflow-x: hidden;
+}
+
+header h1 {
+  position: relative;
+  font-size: 80px;
+  margin: 100px auto auto 100px;
+  -webkit-animation-name: headerLogo;
+          animation-name: headerLogo;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+header nav {
+  background-color: #35a3d8;
+  border: #35a3d8 1px solid;
+  height: 50px;
+  width: 1300px;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+header nav p {
+  margin: auto 50px auto 20px;
+  position: absolute;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+header nav .menuBox {
+  margin: 15px 17%;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  width: 80%;
+  height: 100%;
+}
+
+header nav .menuBox li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .menuBox li .menu {
+  display: none;
+  width: 70%;
+  height: auto;
+  background-color: #35a3d8;
+  margin: 5px auto 0 auto;
+  opacity: 0.7;
+}
+
+header nav .menuBox li .menu .menu-a {
+  list-style-type: none;
+  position: relative;
+}
+
+header nav .menuBox li .menu .menu-a li {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  right: 15%;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+header nav .menuBox li .menu .menu-a li a {
+  width: 100%;
+  font-size: 20px;
+  color: #ffff00;
+  text-align: center;
+}
+
+header nav .menuBox li .menu .menu-a li a:hover {
+  color: #fda137;
+}
+
+header nav .menuBox li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+}
+
+header nav .menuBox li a:hover {
+  color: #ffff00;
+}
+
+.well1 {
+  width: 1500px;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  margin: -55px 12.5%;
+}
+
+.well1 .imgBox1,
+.well1 .imgBox2,
+.well1 .imgBox3 {
+  height: auto;
+}
+
+.well1 .imgBox1 img,
+.well1 .imgBox2 img,
+.well1 .imgBox3 img {
+  height: 300px;
+}
+
+.well1 .imgBox1 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  overflow: hidden;
+  margin: 25px 0 25px 25px;
+}
+
+.well1 .imgBox1 img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(0, 0%);
+          transform: translate(0, 0%);
+}
+
+.well1 .imgBox2 {
+  margin: 25px 25px 25px 25px;
+}
+
+.well1 .imgBox2 img {
+  width: 160%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(-25%, 0%);
+          transform: translate(-25%, 0%);
+}
+
+.well1 .imgBox2,
+.well1 .imgBox3 {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.well1 .imgBox3 {
+  margin: 25px 25px 25px 0;
+}
+
+.well1 .imgBox3 img {
+  width: 160%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(-12%, 0%);
+          transform: translate(-12%, 0%);
+}
+
+.well2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 1500px;
+  margin: 100px 12.5%;
+}
+
+.well2 .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+.well2 .box h3 {
+  font-size: 30px;
+}
+
+.well2 .box p {
+  font-size: 20px;
+}
+
+.well2 .box .imgBox1,
+.well2 .box .imgBox2,
+.well2 .box .imgBox3,
+.well2 .box .imgBox4 {
+  overflow: hidden;
+  margin: auto;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.well2 .box .imgBox1 img,
+.well2 .box .imgBox2 img,
+.well2 .box .imgBox3 img,
+.well2 .box .imgBox4 img {
+  width: 150%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.well2 .box .imgBox1 img:hover,
+.well2 .box .imgBox2 img:hover,
+.well2 .box .imgBox3 img:hover,
+.well2 .box .imgBox4 img:hover {
+  opacity: 0.6;
+}
+
+.well2 .box .imgBox1 img {
+  -webkit-transform: translate(-10%, 0%);
+          transform: translate(-10%, 0%);
+}
+
+.well2 .box .imgBox2 img {
+  -webkit-transform: translate(-20%, 0px);
+          transform: translate(-20%, 0px);
+}
+
+.well2 .box .imgBox3 img {
+  -webkit-transform: translate(-20%, 0px);
+          transform: translate(-20%, 0px);
+}
+
+.well2 .box .imgBox4 img {
+  -webkit-transform: translate(-30%, 0px);
+          transform: translate(-30%, 0px);
+}
+
+.well3 {
+  background-image: url("../img/office-space-1744803.jpg");
+  background-size: cover;
+  background-position: center 45%;
+  height: 400px;
+  min-width: 1800px;
+}
+
+.well3 .box {
+  height: 400px;
+  background-color: #35a3d8;
+  opacity: 0.5;
+}
+
+.well3 .textBox {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin: -280px 0;
+  text-align: center;
+}
+
+.well3 .textBox a {
+  text-decoration: none;
+  font-size: 100px;
+  color: #ffffff;
+  letter-spacing: 6px;
+}
+
+.well3 .textBox a:hover {
+  font-size: 120px;
+  color: #ffff00;
+}
+
+footer {
+  height: 600px;
+  min-width: 1800px;
+  background-color: #35a3d8;
+  border: #35a3d8 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer h1,
+footer h3,
+footer p {
+  color: #ffffff;
+}
+
+footer h1 {
+  font-size: 60px;
+  margin: 120px 0 0 50px;
+  letter-spacing: 6px;
+}
+
+footer .textBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 120px 0px 0px 50px;
+  font-size: 20px;
+}
+
+footer .textBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/*# sourceMappingURL=theme.css.map */

@@ -1,0 +1,142 @@
+// *{border: solid 1px rgb(0, 0, 0)}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+}
+nav,header,.well1,.info,footer{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+nav{
+    height: 100%;
+    background-color: rgb(135, 236, 131);
+    .logo{
+        height: 50px;
+        font-size: 30px;
+        padding-top: 15px;
+    }
+}
+.slide-menu{
+    position: relative;
+    height: 100px;
+    right: -420px;
+    .close-btn{
+        display: none;
+        text-decoration: none;
+    }
+    .open-btn{
+        text-decoration: none;
+    }
+    .top-nav{
+        background-color: rgb(255, 255, 255);
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 10px;
+        padding-right: 60px;
+        li{
+            a{
+                display: block;
+                width: 100%;
+                height: 30px;
+                text-align: center;
+                margin-top: 30px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.swtich-area{
+    width: 50px;
+    position: absolute;
+    left: -40px;
+}
+.wrap{
+    position: absolute;
+    width: 100%;
+    overflow-x: hidden;
+}
+header{
+    background-color: rgb(101, 188, 214);
+    height: 150px;
+}
+.well1{
+    background-color: rgb(251, 255, 40);
+    height: 450px;
+}
+.info{
+    background-color: rgb(146, 66, 184);
+    height: 200px;
+}
+footer{
+    background-color: rgb(214, 82, 82);
+    height: 400px;
+}
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 680px) {
+}
+@media screen and (max-width: 480px) {
+    body{
+        margin: 0px;
+        padding: 0px;
+        font-size: 100%;
+    }
+    nav,header,.well1,.info,footer{
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    nav{
+        height: 100px;
+        overflow-x: hidden;
+        //position: relative;
+        background-color: rgb(255, 255, 255);
+        .logo{
+            height: 50px;
+            font-size: 30px;
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+        .top-nav{
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            right: -420px;
+            li{
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 30px;
+                    text-align: center;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    header{
+        background-color: rgb(101, 188, 214);
+        height: 150px;
+    }
+    .well1{
+        background-color: rgb(251, 255, 40);
+        height: 450px;
+    }
+    .info{
+        background-color: rgb(146, 66, 184);
+        height: 200px;
+    }
+    footer{
+        background-color: rgb(214, 82, 82);
+        height: 400px;
+    }
+}
+@media screen and (max-width: 320px) {
+}

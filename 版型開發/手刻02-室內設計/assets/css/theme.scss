@@ -1,0 +1,261 @@
+// * {
+//   border: 1px #000000 solid;
+// }
+@keyframes headerLogo {
+  0% {
+    opacity: 0.3;
+    left: 2000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+body {
+  font-family: "微軟正黑體";
+  margin: 0;
+  padding: 0;
+}
+header {
+  width: 100%;
+  min-width: 1800px;
+  height: 550px;
+  background-image: url("../img/office-1966381_1920.jpg");
+  border: 1px #ffffff solid;
+  background-position: center 50%;
+  overflow-x: hidden;
+  h1 {
+    position: relative;
+    font-size: 80px;
+    margin: 100px auto auto 100px;
+    animation-name: headerLogo;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+  }
+  nav {
+    background-color: #35a3d8;
+    border: #35a3d8 1px solid;
+    height: 50px;
+    width: 1300px;
+    border-radius: 20px;
+    margin: 20px auto ;
+
+    p {
+      margin: auto 50px auto 20px;
+      position: absolute;
+      font-size: 40px;
+      color: #ffffff;
+    }
+    .menuBox {
+      margin: 15px 17%;
+      padding: 0px;
+      display: flex;
+      list-style-type: none;
+      width: 80%;
+      height: 100%;
+      li {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        .menu {
+          display: none;
+          width: 70%;
+          height: auto;
+          background-color: #35a3d8;
+          margin: 5px auto 0 auto;
+          opacity: 0.7;
+          .menu-a {
+            list-style-type: none;
+            position: relative;
+            li {
+              flex-wrap: wrap;
+              position: relative;
+              right: 15%;
+              margin: 0px;
+              padding: 0px;
+              height: 100%;
+              width: 100%;
+              a {
+                width: 100%;
+                font-size: 20px;
+                color: #ffff00;
+                text-align: center;
+              }
+              a:hover {
+                color: #fda137;
+              }
+            }
+          }
+        }
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          font-size: 20px;
+        }
+        a:hover {
+          color: #ffff00;
+        }
+      }
+    }
+  }
+}
+.well1 {
+  width: 1500px;
+  height: 350px;
+  display: flex;
+  background-color: #fff;
+  margin: -55px 12.5%;
+  .imgBox1,
+  .imgBox2,
+  .imgBox3 {
+    height: auto;
+    img {
+      height: 300px;
+    }
+  }
+  .imgBox1 {
+    flex: 2;
+    overflow: hidden;
+    margin: 25px 0 25px 25px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      transform: translate(0, 0%);
+    }
+  }
+  .imgBox2 {
+    margin: 25px 25px 25px 25px;
+    img {
+      width: 160%;
+      object-fit: cover;
+      transform: translate(-25%, 0%);
+    }
+  }
+  .imgBox2,
+  .imgBox3 {
+    overflow: hidden;
+    flex: 1;
+  }
+  .imgBox3 {
+    margin: 25px 25px 25px 0;
+    img {
+      width: 160%;
+      object-fit: cover;
+      transform: translate(-12%, 0%);
+    }
+  }
+}
+.well2 {
+  display: flex;
+  min-width: 1500px;
+  margin: 100px 12.5%;
+  .box {
+    flex: 1;
+    justify-content: space-around;
+    text-align: center;
+    h3 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .imgBox1,
+    .imgBox2,
+    .imgBox3,
+    .imgBox4 {
+      overflow: hidden;
+      margin: auto;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      img {
+        width: 150%;
+        object-fit: cover;
+      }
+      img:hover {
+        opacity: 0.6;
+      }
+    }
+    .imgBox1 {
+      img {
+        transform: translate(-10%, 0%);
+      }
+    }
+    .imgBox2 {
+      img {
+        transform: translate(-20%, 0px);
+      }
+    }
+    .imgBox3 {
+      img {
+        transform: translate(-20%, 0px);
+      }
+    }
+    .imgBox4 {
+      img {
+        transform: translate(-30%, 0px);
+      }
+    }
+  }
+}
+.well3 {
+  background-image: url("../img/office-space-1744803.jpg");
+  background-size: cover;
+  background-position: center 45%;
+  height: 400px;
+  min-width: 1800px;
+  .box {
+    height: 400px;
+    background-color: #35a3d8;
+    opacity: 0.5;
+  }
+  .textBox {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin: -280px 0 ;
+    text-align: center;
+    a {
+      text-decoration: none;
+      font-size: 100px;
+      color: #ffffff;
+      letter-spacing: 6px;
+    }
+    a:hover {
+      font-size: 120px;
+      color: #ffff00;
+    }
+  }
+}
+footer {
+  height: 600px;
+  min-width: 1800px;
+  background-color: #35a3d8;
+  border: #35a3d8 1px solid;
+  display: flex;
+  flex-direction: column;
+  h1,
+  h3,
+  p {
+    color: #ffffff;
+  }
+  h1 {
+    font-size: 60px;
+    margin: 120px 0 0 50px;
+    letter-spacing: 6px;
+  }
+  .textBox {
+    display: flex;
+    justify-content: space-around;
+    margin: 120px 0px 0px 50px;
+    font-size: 20px;
+    .box {
+      flex: 1;
+    }
+  }
+}
