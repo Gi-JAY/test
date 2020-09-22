@@ -1,0 +1,33 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000000;
+}
+
+body {
+  font-family: "微軟正黑體";
+}
+
+.card-img-top {
+  height: 200px;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menu li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  margin-left: 40px;
+  margin-top: 40px;
+  list-style-type: none;
+}
+/*# sourceMappingURL=style.css.map */

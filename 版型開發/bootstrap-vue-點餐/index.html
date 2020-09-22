@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="row" id="">
+            <div class="col ">
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true">漢堡</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">甜點</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">飲料</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active bg-secondary" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <ul class="menu">
+                            <li v-for="menu in menus" v-if="menu.sort=='humburger'">
+                                <div class="card" style="width: 18rem;">
+                                    <img :src="menu.src" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{menu.name}}</h5>
+                                        <h5>NT{{menu.price}}</h5>
+                                        <label for="quantity">
+                                            <h5>數量:</h5>
+                                        </label>
+                                        <input id="quantity" type="number" v-model="menu.quantity" min="0">
+
+                                        <!-- <a href="#" class="btn btn-primary">結帳</a> -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-pane fade bg-secondary" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                        <ul class="menu">
+                            <li v-for="menu in menus" v-if="menu.sort=='dessert'">
+                                <div class="card" style="width: 18rem;">
+                                    <img :src="menu.src" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{menu.name}}</h5>
+                                        <h5>NT{{menu.price}}</h5>
+                                        <label for="quantity">
+                                            <h5>數量:</h5>
+                                        </label>
+                                        <input id="quantity" type="number" v-model="menu.quantity" min="0">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade bg-secondary" id="pills-contact" role="tabpanel"
+                        aria-labelledby="pills-contact-tab">
+                        <ul class="menu">
+                            <li v-for="menu in menus" v-if="menu.sort=='drink'">
+                                <div class="card" style="width: 18rem;">
+                                    <img :src="menu.src" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{menu.name}}</h5>
+                                        <h5>NT{{menu.price}}</h5>
+                                        <label for="quantity">
+                                            <h5>數量:</h5>
+                                        </label>
+                                        <input id="quantity" type="number" v-model="menu.quantity" min="0">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h5>總額:{{total}}</h5>
+    </div>
+
+    <a href="#" class="btn btn-primary">購物車</a>
+    <script src="./assets/script/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script/vue.js"></script>
+    <script src="./assets/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="./assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        vm = new Vue({
+            el: '#app',
+            data: {
+
+                menus: [
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "墨香勁辣烤牛培根堡",
+                        price: 120,
+                        src: "./assets/images/humburger1.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "豬肉雙層起司堡",
+                        price: 105,
+                        src: "./assets/images/humburger2.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "起司豬肉堡",
+                        price: 105,
+                        src: "./assets/images/humburger3.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "巨無霸貝果烤牛堡",
+                        price: 180,
+                        src: "./assets/images/humburger4.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "雙層牛肉起司堡",
+                        price: 110,
+                        src: "./assets/images/humburger5.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "墨香豬肉",
+                        price: 105,
+                        src: "./assets/images/humburger6.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "隨機造型堡",
+                        price: 99,
+                        src: "./assets/images/humburger7.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "勁辣卡拉雞腿堡",
+                        price: 105,
+                        src: "./assets/images/humburger8.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "humburger",
+                        name: "墨香勁辣烤牛培根堡",
+                        price: 105,
+                        src: "./assets/images/humburger9.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "drink",
+                        name: "牛奶",
+                        price: 80,
+                        src: "./assets/images/drink1.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "drink",
+                        name: "檸檬汁",
+                        price: 80,
+                        src: "./assets/images/drink2.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "drink",
+                        name: "草莓",
+                        price: 80,
+                        src: "./assets/images/drink3.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "巧克力蛋糕",
+                        price: 100,
+                        src: "./assets/images/dessert1.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "提拉米蘇(草莓)",
+                        price: 100,
+                        src: "./assets/images/dessert2.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "巧克力麵包+奶凍",
+                        price: 150,
+                        src: "./assets/images/dessert3.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "咖啡冰淇淋蛋糕",
+                        price: 110,
+                        src: "./assets/images/dessert4.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "水果冰淇淋聖代",
+                        price: 130,
+                        src: "./assets/images/dessert5.jpg"
+                    },
+                    {
+                        quantity: 0,
+                        sort: "dessert",
+                        name: "巧克力泡芙",
+                        price: 100,
+                        src: "./assets/images/dessert6.jpg"
+                    }
+                ]
+            },
+            computed: {
+                total() {
+                    let sum = 0;
+                    for (i = 0; i < this.menus.length; i++)
+                        sum += this.menus[i].quantity * this.menus[i].price;
+                    return sum;
+                }
+                //         for(i = 0; i<menus.length; i++){
+
+                // }
+            }
+        })
+    </script>
+</body>
+
+</html>
