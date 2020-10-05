@@ -4,7 +4,7 @@
 //     fn;
 // }(test()))
 // function test() {
-//     console.log('done');npm
+//     console.log('done');
 // }
 // console.log('success');
 
@@ -27,4 +27,4 @@ func1.then(
     .catch(
         () => alert('err')
     );
-console.log('done');
+console.log('done'); //測試alert是否為異步
