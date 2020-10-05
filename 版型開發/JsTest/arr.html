@@ -13,9 +13,12 @@
         (function () {
             let a = [1, 3, 3, 3, 4, 8, 9, 2];
             a.sort((x, y) => x - y);
-            console.log(a);
+            console.log(a);  //查看sort效果
+
+            //查看indexOF,lastIndexOf的不同
             console.log(a.indexOf(3));
             console.log(a.lastIndexOf(3));
+
             (function check() {
                 // if(a.indexOf(3) != a.lastIndexOf(3)){
                 //     a.splice(a.indexOf(3),1);
