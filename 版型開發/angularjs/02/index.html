@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/stylesheet.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body ng-constroller="doList">
-    <nav class="navbar navbar-dark bg-dark">
-        <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>contract</li>
-        </ul>
-    </nav>
-    <section>
-        <aside>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-        </aside>
-        <p>1326465</p>
-    </section>
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/angular/angular.min.js"></script>
+<body ng-controller="myConctrl">
+    <a href="#!/">home</a>
+    <a href="#!/about">關於</a>
+    <a href="#!/li">測試</a>
+</br>
+    {{content}}
+    <div ng-view></div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

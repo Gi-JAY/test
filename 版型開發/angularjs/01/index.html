@@ -31,8 +31,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat='item in todo.items | checkedItems:showComplete | orderBy:action'>
-                    <td> {{item.action}} </td>
+                <tr ng-repeat='item in todo.items | checkedItems:showComplete '>
+                    <td> {{item.action}} <a href="#" ng-click="todo.items.splice(todo.items.indexOf(item),1)">刪除</a></td>
                     <td><input type="checkbox" ng-model="item.done" name="" id=""></td>
                 </tr>
                 <div class="checkbox-inline">

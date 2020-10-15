@@ -1,0 +1,20 @@
+<div class="list-group">
+    <a href="javascript:;" class="list-group-item"
+    ng-class="{changeColor:item.status}"
+     ng-click="item.status=!item.status"
+     ng-repeat="item in aboutData">{{item.content}}</a>
+</div>
+
+<style>
+    .list-group>a{
+        display: inline-block;
+        width: 200px;
+    }
+    div.list-group>a:hover{
+        background-color: black;
+    }
+    .changeColor{
+        background-color: yellow;
+        color: red;
+    }
+</style>
