@@ -52,20 +52,21 @@ header nav {
   background-color: #35a3d8;
   border: #35a3d8 1px solid;
   height: 50px;
-  width: 1300px;
+  width: 1250px;
   border-radius: 20px;
   margin: 20px auto;
 }
 
 header nav p {
-  margin: auto 50px auto 20px;
   position: absolute;
+  top: -20px;
+  left: 340px;
   font-size: 40px;
   color: #ffffff;
 }
 
 header nav .menuBox {
-  margin: 15px 17%;
+  margin: 15px 20%;
   padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,9 +107,7 @@ header nav .menuBox li .menu .menu-a li {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
-  right: 15%;
-  margin: 0px;
-  padding: 0px;
+  left: -19px;
   height: 100%;
   width: 100%;
 }
