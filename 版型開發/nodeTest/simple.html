@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body>
+    <p>hello world</p>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script>
+        let data = new FormData();
+        let config = {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }
+        data.append('first_name', 'lksjdf');
+        data.append('last_name', 'ksdlf;');
+
+        axios.post('http://127.0.0.1:5500/', data, config)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    </script>
+</body>
+
+</html>
