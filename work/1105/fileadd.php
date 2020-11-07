@@ -1,17 +1,39 @@
 <?php
-$new_content = mb_split(",",$content_import);
+$new_content = mb_split("\n",$content_import);
+$row = array();
 
-  $ISBN = $new_content[0];
-  $publish = $new_content[1];
-  $bookname = $new_content[2];
-  $author = $new_content[3];
-  $price = $new_content[4];
-  $publishday = $new_content[5];
+for($i=0; $i<count($new_content); $i++){ //總共幾筆資料
+  $row[$i] = mb_split(",",$new_content[$i]);
+  for($j=0; $j<count($row[$i]); $j++){
+    switch($j){
+      case 0:
+        $ISBN = $row[$i][$j];
+      break;
+      case 1:
+        $publish = $row[$i][$j];
+      break;
+      case 2:
+        $bookname = $row[$i][$j];
+      break;
+      case 3:
+        $author = $row[$i][$j];
+      break;
+      case 4:
+        $price = $row[$i][$j];
+      break;
+      case 5:
+        $publishday = $row[$i][$j];
+      break;
+    }
+  }
+  $publishday = trim($publishday); //清除空白字元
   require 'check.php';
   if($check){
     $sql = "INSERT INTO Book (ISBN,publish,bookname,author,price,publishday) VALUES ('$ISBN','$publish','$bookname','$author','$price','$publishday')";
     mysqli_query($link,$sql);
-    // header("location:index.php");
+    if($i == count($new_content)-1){
+      header("location:index.php");  //刷新顯示新加入的資料
+    }
   }
-
+}
 ?>

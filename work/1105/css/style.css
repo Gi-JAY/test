@@ -1,3 +1,8 @@
-form{
+form {
   display: inline-block;
+}
+.addBtn {
+  position: relative;
+  top: 15px;
+  left: 250px;
 }

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css.style">
+<link rel="stylesheet" href="./css/style.css">
 <form action="creat.php" method="POST">
   <table>
     <tr>
@@ -26,6 +26,5 @@
       <td><input type="text" name="publishday"></td>
     </tr>
   </table>
-  <button type="submit">Add Record</button>
+  <button type="submit" class="creatBtn">Add Record</button>
 </form>
-<hr>

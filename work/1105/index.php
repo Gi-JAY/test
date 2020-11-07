@@ -8,15 +8,16 @@
   <p>
     排序
     <select name="sort">
-      <option>ISBN</option>
-      <option>出版社</option>
-      <option>書名</option>
-      <option>作者</option>
-      <option>定價</option>
-      <option>發行日</option>
+      <option value="ISBN" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "ISBN") echo "selected" ?>>ISBN</option>
+      <option value="publish" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "publish") echo "selected" ?>>出版社</option>
+      <option value="bookname" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "bookname") echo "selected" ?>>書名</option>
+      <option value="author" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "author") echo "selected" ?>>作者</option>
+      <option value="price" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "price") echo "selected" ?>>定價</option>
+      <option value="publishday" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "publishday") echo "selected" ?>>發行日</option>
     </select>
     方向
-    <select name="method">
+    <select name="method" onchange="submit()">
+      <option>--請選擇--</option>
       <option>ASC</option>
       <option>DESC</option>
     </select>
@@ -25,6 +26,9 @@
 <?php
 require 'db_config.php';
 $sql = 'SELECT * FROM Book';
+if(isset($_GET["sort"]) && isset($_GET["method"])){//如果使用排序功能
+  $sql = "SELECT * FROM Book ORDER BY ".$_GET["sort"]." ".$_GET["method"];
+}
 $result = mysqli_query($link,$sql);
 $total_fields = mysqli_num_fields($result);
 $content = "";
@@ -33,12 +37,15 @@ $content_import = "";
 <?php
 if(isset($_FILES["Filename"])){
   if(empty($_FILES["Filename"]["name"])){
-    header("location:index.php");
+    header("location:index.php"); //防止沒有檔案的POST  發生表單錯誤
   }
+  copy($_FILES["Filename"]["tmp_name"],$_FILES["Filename"]["name"]);  //複製一個檔案到伺服器
   $fp = fopen($_FILES["Filename"]["name"],'r');
-  $content_import = fread($fp, filesize($_FILES["Filename"]["name"])-1);
-  fclose($fp);
+  $content_import = fread($fp, filesize($_FILES["Filename"]["name"]));
+  unlink($_FILES["Filename"]["tmp_name"]);
   require 'fileadd.php';
+  unlink($_FILES["Filename"]["name"]); //新增完畢後刪除複製過來的檔案
+  fclose($fp);
 }
 ?>
 <table border=1>
@@ -78,4 +85,4 @@ $fp = fopen($filename,'w') or exit("檔案 $filename 開啟錯誤</br>");
 fwrite($fp,$content);
 ?>
 </table>
-<a href="add.php"><button>ADD</button></a>
+<a href="add.php" class="addBtn"><button>ADD</button></a>
