@@ -79,10 +79,12 @@ while($row = mysqli_fetch_row($result)){
 <?php
 echo "</tr>";
 }
-//將所有書籍資料寫入txt檔
-$filename = "bookInfo.txt";
-$fp = fopen($filename,'w') or exit("檔案 $filename 開啟錯誤</br>");
-fwrite($fp,$content);
+if(empty($_GET["sort"]) && empty($_GET["method"])){
+  //將所有書籍資料寫入txt檔
+  $filename = "bookInfo.txt";
+  $fp = fopen($filename,'w') or exit("檔案 $filename 開啟錯誤</br>");
+  fwrite($fp,$content);
+}
 ?>
 </table>
 <a href="add.php" class="addBtn"><button>ADD</button></a>

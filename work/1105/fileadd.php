@@ -1,6 +1,5 @@
 <?php
 $new_content = mb_split("\n",$content_import);
-$row = array();
 
 for($i=0; $i<count($new_content); $i++){ //總共幾筆資料
   $row[$i] = mb_split(",",$new_content[$i]);
