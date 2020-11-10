@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="csvExport.php" method="POST" class="export">
+    資料匯出：<input type="submit" value="匯出">
+    <input type="hidden" name="sql" value="<?php echo $sql ?>">
+  </form>
+  <form action="/dashboard/phpTest/work/1109/index.php" method="GET" class="sort">
+    <p>
+      排序
+      <select name="sort" onchange="submit()">
+        <option value="ISBN" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "ISBN") echo "selected" ?>>ISBN</option>
+        <option value="publish" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "publish") echo "selected" ?>>出版社
+        </option>
+        <option value="bookname" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "bookname") echo "selected" ?>>書名
+        </option>
+        <option value="author" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "author") echo "selected" ?>>作者
+        </option>
+        <option value="price" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "price") echo "selected" ?>>定價</option>
+        <option value="publishday" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "publishday") echo "selected" ?>>
+          發行日</option>
+      </select>
+      方向
+      <select name="method" onchange="submit()">
+        <option <?php if(isset($_GET["method"]) && $_GET["method"] == "ASC") echo "selected" ?>>ASC</option>
+        <option <?php if(isset($_GET["method"]) && $_GET["method"] == "DESC") echo "selected" ?>>DESC</option>
+      </select>
+    </p>
+  </form>
+  <table border=1>
+    <tr>
+      <td>ISBN</td>
+      <td>出版社</td>
+      <td>書名</td>
+      <td>作者</td>
+      <td>定價</td>
+      <td>發行日</td>
+      <td>編輯/刪除</td>
+    </tr>
+    <?php
+  while($row = $mysqli->fetch_row()){
+    echo "<tr>";
+    for($i=0; $i<$total_fields; $i++){
+      if($i != 0){
+        echo "<td>".$row[$i]."</td>";
+      }
+    }
+    echo "<td>";
+    echo "<a href='edit.php?id=".$row[0]."'><button name='edit'>EDIT</button></a>";
+    echo "<a href='Delete.php?id=".$row[0]."'><button onclick='if(!confirm(\"確認刪除？\")){return false;}'>DEL</button></a>";
+    echo "</tr>";
+  }
+  ?>
+  </table>
+  <a href="xhtml/add.html" class="addBtn"><button>ADD</button></a>
+</body>
+
+</html>

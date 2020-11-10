@@ -1,0 +1,15 @@
+.import{
+  margin-left: -70px;
+}
+.sort{
+  display: inline-block;
+  margin-left: 265px;
+}
+.export{
+  display: inline-block;
+}
+.addBtn {
+  position: relative;
+  top: 15px;
+  left: 250px;
+}
