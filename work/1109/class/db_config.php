@@ -21,7 +21,7 @@ class db
     }
     /** Get array return by mysqli */
     function fetch_array(){
-        return mysqli_fetch_array($this->_queryResource, mysqli_ASSOC);
+        return mysqli_fetch_array($this->_queryResource);
     }
     function fetch_row(){
         return mysqli_fetch_row($this->_queryResource);
