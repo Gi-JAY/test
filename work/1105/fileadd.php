@@ -1,5 +1,6 @@
 <?php
 $new_content = mb_split("\n",$content_import);
+<<<<<<< HEAD
 for($i=0; $i<count($new_content); $i++){//檢查字尾是否為空
   if($i>0){
     if($new_content[$i] == ""){
@@ -7,6 +8,8 @@ for($i=0; $i<count($new_content); $i++){//檢查字尾是否為空
     }
   }
 }
+=======
+>>>>>>> 926a028ac5ad1b1a9272bc2c37a70e74859962b8
 
 for($i=0; $i<count($new_content); $i++){ //總共幾筆資料
   $row[$i] = mb_split(",",$new_content[$i]);

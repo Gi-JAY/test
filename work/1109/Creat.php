@@ -10,10 +10,25 @@ $publishday = $_POST["publishday"];
 
 require 'check.php'; //檢查格式
 if($check){
+<<<<<<< HEAD
 	$sql = "INSERT INTO Book2 (ISBN,publish,bookname,author,price,publishday) VALUES ('$ISBN','$publish','$bookname','$author','$price','$publishday')";
 	$mysqli->query($sql);
 	echo "<script>";
 	echo "history.go(-2);";
 	echo "</script>"; 
+=======
+    $sql = "INSERT INTO Book2 (ISBN,publish,bookname,author,price,publishday) VALUES ('$ISBN','$publish','$bookname','$author','$price','$publishday')";
+    $mysqli->query($sql);
+    echo "<script>";
+    echo "history.go(-2);";
+    echo "</script>";
+
+    //將新增的資料寫入csv檔
+    $filename = "bookInfo.csv";
+    $content = "'$ISBN','$publish','$bookname','$author','$price','$publishday'\n";
+    $fp = fopen($filename,'a') or exit("檔案 $filename 開啟錯誤</br>");
+    fputcsv($fp, split(',', $content));
+    fclose($fp); 
+>>>>>>> 926a028ac5ad1b1a9272bc2c37a70e74859962b8
 }
 ?>
