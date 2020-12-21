@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<table border=1>
+		<tr>
+			<td>帳號</td>
+			<td>密碼</td>
+			<td>顯示頻率(/分鐘)</td>
+			<td>修改</td>
+		</tr>
+		<?php
+		while($row = $mysql->fetch_row()){
+			echo "<tr>\n";
+			for($i=1,$count=count($row); $i<$count; $i++){
+				if($i == 2) echo "<td>**********</td>\n";
+				else        echo "<td>$row[$i]</td>\n";
+			}
+			echo "<td><a href='edit.php?id={$row[0]}'><button>修改</button></a></td>\n";
+			echo "</tr>\n";
+		}
+		?>
+	</table>
+</body>
+</html>

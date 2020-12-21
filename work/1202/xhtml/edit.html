@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="Update.php" method="post">
+		<table border=1>
+			<tr>
+				<td>帳號:</td>
+				<td><?php echo $row["user"] ?></td>
+			</tr>
+			<tr>
+				<td>密碼:</td>
+				<td><input type="password" name="pwd" readonly="true" value="<?php echo $row["password"] ?>"></td>
+			</tr>
+			<tr>
+				<td>顯示頻率(/分鐘):</td>
+				<td>
+					<select name="refresh">
+						<option <?php if($row["refresh"] == 1) echo "selected" ?>>1</option>
+						<option <?php if($row["refresh"] == 3) echo "selected" ?>>3</option>
+						<option <?php if($row["refresh"] == 5) echo "selected" ?>>5</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		<input type="submit" value="變更">
+		<a href="setpassword.php?id=<?php echo $id; ?>"><button type="button">重設密碼</button></a>
+	</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<table border=1>
+	<thead>
+		<tr>
+			<td>dev</td>
+			<td>ip</td>
+			<td>mask</td>
+			<td>連線狀態</td>
+			<td>線路狀態</td>
+			<td>Tx總封包量</td>
+			<td>Rx總封包量</td>
+			<td>Tx總傳輸量(byte)</td>
+			<td>Rx總傳輸量(byte)</td>
+			<td>Tx錯誤封包</td>
+			<td>Rx錯誤封包</td>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+		foreach($info as $key => $dev){
+			echo "<tr>\n";
+			echo "<td>$key</td>\n";
+			echo "<td>{$dev['ip']}</td>\n";
+			echo "<td>{$dev['mask']}</td>\n";
+			echo "<td>{$dev['connect']}</td>\n";
+			echo "<td>{$dev['link']}</td>\n";
+			echo "<td>{$dev['tx_packets']}</td>\n";
+			echo "<td>{$dev['rx_packets']}</td>\n";
+			echo "<td>{$dev['tx_bytes']}</td>\n";
+			echo "<td>{$dev['rx_bytes']}</td>\n";
+			echo "<td>{$dev['tx_error']}</td>\n";
+			echo "<td>{$dev['rx_error']}</td>\n";
+			echo "</tr>\n";
+		}
+		?>
+	</tbody>
+	<tbody>
+	</tbody>
+</table>	
+</body>
+</html>

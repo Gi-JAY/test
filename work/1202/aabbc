@@ -1,0 +1,5 @@
+16:30:39, 0.00,0.00,0.00, 98, 1, 0.03, 32429, sshd: root@notty , 0.1, 1149, /PGRAM/mysql/libexec/mysqld , 0.0, 2537, /PGRAM/php/bin/php -q /PDAT , 0.0
+16:30:51, 0.00,0.00,0.00, 95, 1, 0.03, 32429, sshd: root@notty , 0.0, 1149, /PGRAM/mysql/libexec/mysqld , 0.0, 2537, /PGRAM/php/bin/php -q /PDAT , 0.0
+17:00:30, 0.00,0.00,0.00, 101, 1, 0.03, 1149, /PGRAM/mysql/libexec/mysqld , 0.0, 2537, /PGRAM/php/bin/php -q /PDAT , 0.0, 28164, sshd: root@notty , 0.0
+17:00:32, 0.00,0.00,0.00, 99, 1, 0.03, 1149, /PGRAM/mysql/libexec/mysqld , 0.0, 2537, /PGRAM/php/bin/php -q /PDAT , 0.0, 1376, /PGRAM/php/bin/php /PGRAM/w , 0.0
+17:05:59, 0.01,0.01,0.00, 98, 1, 0.03, 1746, sshd: root@notty , 0.0, 1645, sshd: root@notty , 0.0, 1149, /PGRAM/mysql/libexec/mysqld , 0.0

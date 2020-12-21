@@ -54,14 +54,10 @@ if(empty($ISBN) || empty($publish) || empty($bookname) || empty($author) || empt
   echo "alert('$str,還未填寫');";
   echo "history.go(-1)";
   echo "</script>";
-}else if(!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{1}$/",$ISBN) || 
- !preg_match("/^[\\W]+$/",$author) || !preg_match("/^[0-9]+$/",$price)  || 
+}else if(!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{1}$/",$ISBN)  || !preg_match("/^[0-9]+$/",$price)  || 
  !$check_publishday){
   if(!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{1}$/",$ISBN)){
     $check_str .= "ISBN格式錯誤\\n";
-  }
-  if(!preg_match("/^[\\W]+$/",$author)){
-    $check_str .= "作者格式錯誤\\n";
   }
   if(!preg_match("/^[0-9]+$/",$price)){
     $check_str .= "價格格式錯誤\\n";

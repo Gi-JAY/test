@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<form action="showarp.php" method="post">
+	<table border=1>
+		<thead>
+			<tr>
+				<td>ip</td>
+				<td>mac</td>
+				<td>interface</td>
+				<td>del</td>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			foreach($info as $dev){
+				echo "<tr>\n";
+				echo "<td>{$dev['ip']}</td>\n";
+				echo "<td>{$dev['mac']}</td>\n";
+				echo "<td>{$dev['ifc']}</td>\n";
+				
+				$del = $dev["ip"].",".$dev["ifc"];
+				echo "<td><button name='del' value='".$del."'>刪除</button></td>";
+				echo "</tr>\n";
+			}
+			?>
+		</tbody>
+	</table>
+	<table>
+		<tbody>
+			<tr>
+				<td>ip</td>
+				<td>
+					<input type="text" name="ip_add" value="<?php if(isset($_POST["ip_add"])) echo $ip; ?>">
+				</td>
+			</tr>
+			<tr>
+				<td>mac</td>
+				<td><input type="text" name="mac" value="<?php if(isset($_POST["mac"])) echo $mac; ?>"></td>
+			</tr>
+			<tr>
+				<td>interface</td>
+				<td>
+					<select name="interface">
+						<option value="0">--請選擇--</option>
+						<option <?php if(isset($_POST["interface"]) && $_POST["interface"] == "eth0") echo "selected"; ?>>eth0</option>
+						<option <?php if(isset($_POST["interface"]) && $_POST["interface"] == "eth1") echo "selected"; ?>>eth1</option>
+						<option <?php if(isset($_POST["interface"]) && $_POST["interface"] == "eth2") echo "selected"; ?>>eth2</option>
+						<option <?php if(isset($_POST["interface"]) && $_POST["interface"] == "eth3") echo "selected"; ?>>eth3</option>
+					</select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="submit" value="新增" >
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="../Creat.php" method="post">
+		<table border=1>
+			<tr>
+				<td>帳號:</td>
+				<td><input type="text" name="user"></td>
+			</tr>
+			<tr>
+				<td>密碼:</td>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>確認密碼:</td>
+				<td><input type="password" name="pwd_ck"></td>
+			</tr>
+			<tr>
+				<td>顯示頻率(/分鐘):</td>
+				<td>
+					<select name="refresh">
+						<option>1</option>
+						<option>3</option>
+						<option>5</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="新增">
+	</form>
+</body>
+</html>

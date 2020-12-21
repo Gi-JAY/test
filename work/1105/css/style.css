@@ -1,4 +1,11 @@
-form {
+.import{
+  margin-left: -70px;
+}
+.sort{
+  display: inline-block;
+  margin-left: 265px;
+}
+a.export{
   display: inline-block;
 }
 .addBtn {

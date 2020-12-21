@@ -1,0 +1,164 @@
+@font-face {
+	font-family: "cwTeXKai";
+	/* font-style: normal;
+	font-weight: 500; */
+	src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot);
+	src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot?#iefix) format("embedded-opentype"),
+		url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff2) format("woff2"),
+		url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff) format("woff"),
+		url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.ttf) format("truetype");
+}
+
+* {
+	font-family: "cwTeXKai";
+}
+
+button {
+	margin: 3px;
+}
+button:hover {
+	cursor: pointer;
+}
+form.sort {
+	display: inline-block;
+	position: relative;
+	left: 44%;
+	top: 60px;
+	font-size: 13px;
+	font-weight: bolder;
+	color: #039;
+}
+form.sort select {
+	font-size: 13px;
+	color: #039;
+}
+form.inputPage {
+	display: inline-block;
+}
+div.page {
+	display: inline-block;
+	position: relative;
+	top: 60px;
+	left: 44%;
+	font-size: 13px;
+	font-weight: bolder;
+	color: #039;
+}
+div.page a {
+	margin: 0 5px;
+}
+div.page > p {
+	display: inline;
+}
+div.page span.pageGo {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 21px;
+	background-image: url("../images/go.jpg");
+}
+a.addBtn {
+	display: block;
+	margin: 0 auto;
+	width: 0px;
+}
+a.addBtn button {
+	margin: 0 50%;
+	width: 45px;
+	background-color: #6f9;
+}
+table {
+	margin: 30px auto;
+	text-align: center;
+	border: 5px solid #bbb;
+}
+table td {
+	font-size: 14px;
+	border: 1px solid #bbb;
+	border-left: unset;
+	border-bottom: unset;
+}
+table tr:hover {
+	background-color: #eee;
+}
+thead {
+	font-weight: bolder;
+}
+thead td {
+	font-size: 16px;
+	border-top: unset;
+}
+.exportGO {
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	width: 62px;
+	height: 17px;
+	background-image: url("../images/export.png");
+}
+div.page span.pageGo:hover {
+	cursor: pointer;
+}
+.export > p > span:hover {
+	cursor: pointer;
+}
+.editBtn {
+	background-color: #f90;
+}
+.delBtn {
+	background-color: #f00;
+}
+.toolTip {
+	display: inline-block;
+	position: relative;
+}
+.toolTip .tip {
+	display: none;
+	position: absolute;
+	width: 60px;
+	height: 20px;
+	top: 150%;
+	left: -200%;
+	text-align: center;
+	background-color: #f1f1f1;
+	text-decoration: none;
+	color: #000;
+	border: 2px solid #000;
+}
+.toolTip:hover .tip {
+	display: unset;
+}
+p.exportHead {
+	position: relative;
+	margin-left: 194px;
+	top: -25px;
+	left: 44%;
+	width: 300px;
+	color: #039;
+	font-size: 13px;
+	font-weight: bold;
+}
+p.exportHead > select {
+	font-size: 13px;
+	color: #039;
+}
+
+/* 出版社資訊 */
+.publishTip {
+	position: relative;
+}
+.publishTip .pbTip {
+	display: block;
+	position: absolute;
+	width: 300%;
+	top: 150%;
+	padding: 10px;
+	text-align: left;
+	font-size: 13px;
+	background-color: #f1f1f1;
+	text-decoration: none;
+	color: #000;
+	border: 2px solid #000;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<table border=1>
+	<thead>
+		<tr>
+			<?php
+			foreach($route[1] as $head){
+				echo "<td>$head</td>\n";
+			}
+			?>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+		for($i=2,$a_count=count($route); $i<$a_count; $i++){
+			echo "<tr>\n";
+			for($j=0,$b_count=count($route[$i]); $j<$b_count; $j++){
+				echo "<td>".$route[$i][$j]."</td>\n";
+			}
+			echo "</tr>\n";
+		}
+		?>
+	</tbody>
+</table>	
+</body>
+</html>

@@ -5,6 +5,11 @@ $id = $_GET["id"];
 $sql = "SELECT * FROM Book WHERE id = '$id'";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
+
+//防止"符號無法印出
+$row["bookname"] = str_replace("\"","&quot;",$row["bookname"]); 
+$row["publish"] = str_replace("\"","&quot;",$row["publish"]); 
+$row["author"] = str_replace("\"","&quot;",$row["author"]); 
 ?>
 <link rel="stylesheet" href="./css/style.css">
 <form action="update.php" method="POST">

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/showinfo.css">
+	<title>Document</title>
+</head>
+<body>
+<nav>
+	<ul>
+		<li><a href="xhtml/add.html">新增帳號</a></li>
+		<li><a href="edit.php?id=<?php echo $id ?>">設定</a></li>
+		<li><a href="showaccount.php">帳號管理與設定</a></li>
+		<li><a href="logout.php">登出</a></li>
+	</ul>
+</nav>
+<form action="showinfo.php" method="get">
+		排序方式:
+		<select name="sort" onchange="submit()">
+		<option value="ASC" <?php if(isset($sort) && $sort == "ASC") echo "selected"; ?>>正序</option>
+		<option value="DESC" <?php if(isset($sort) && $sort == "DESC") echo "selected"; ?>>倒序</option>
+		</select>
+		<div class="timesearch">
+			搜尋時間: <input type="text" name="hour" size="1" value="<?php if(isset($hour)) echo $hour ?>">時
+			<input type="text" name="minute" size="1" value="<?php if(isset($minute)) echo $minute ?>">分
+		</div>
+		<input type="submit" value="搜尋">
+		<div class="page">
+		<p>
+			<a href="showinfo.php?page=1<?php if(isset($hour) && isset($minute)) echo "&hour=$hour&minute=$minute";echo "&sort=$sort";?>">|<</a>
+			<a href="showinfo.php?page=<?php echo $page-1;if(isset($hour) && isset($minute)) echo "&hour=$hour&minute=$minute";echo "&sort=$sort"; ?>"><</a>
+			第<?php echo $page ?>頁
+			<a href="showinfo.php?page=<?php if($page<$page_end) echo $page+1; else echo $page_end;if(isset($hour) && isset($minute)) echo "&hour=$hour&minute=$minute";echo "&sort=$sort"; ?>">></a>
+			<a href="showinfo.php?page=<?php echo $page_end;if(isset($hour) && isset($minute)) echo "&hour=$hour&minute=$minute";echo "&sort=$sort"; ?>">>|</a>
+			搜尋: <input name="schpage" type="text" size="1" value="<?php if(isset($_POST["schpage"])) echo $_POST["schpage"]; ?>"> 頁
+			共<?php echo $page_end; ?>頁
+		</p>
+		</div>
+</form>
+	<table border=1>
+	<tr>
+		<td>時間</td>
+		<td>load average</td>
+		<td>Tasks total</td>
+		<td>running tasks</td>
+		<td>cpu使用率</td>
+		<td>pid</td>
+		<td>CMD</td>
+		<td>cpu%</td>
+		<td>pid 2</td>
+		<td>CMD 2</td>
+		<td>cpu% 2</td>
+		<td>pid 3</td>
+		<td>CMD 3</td>
+		<td>cpu% 3</td>
+	</tr>
+	<?php
+	for($i=0,$aCount=count($info_show); $i<$aCount; $i++){
+		echo "<tr>\n";
+		$show = explode(", ",$info_show[$i]);
+		for($j=0,$bCount=count($show); $j<$bCount; $j++){
+			echo "<td>$show[$j]</td>\n";
+		}
+		echo "</tr>\n";
+	}
+	?>
+	</table>
+</body>
+</html>

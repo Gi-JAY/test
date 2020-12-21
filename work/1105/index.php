@@ -1,13 +1,16 @@
 <?php session_start(); ?>
 <link rel="stylesheet" href="./css/style.css">
 <form action="/dashboard/phpTest/work/1105/index.php" method="POST" enctype="multipart/form-data">
-  <p>匯入資料：<input type="file" name="Filename"></p>
-  <p>資料匯出：<input type="submit" value="匯出"></p>
+  <p>
+    匯入資料：<input type="file" name="Filename">
+    <input type="submit" value="匯入" class="import">
+  </p>
 </form>
-<form action="/dashboard/phpTest/work/1105/index.php" method="GET">
+資料匯出：<a href="getInfo.php" class="export"><button>匯出</button></a>
+<form action="/dashboard/phpTest/work/1105/index.php" method="GET" class="sort">
   <p>
     排序
-    <select name="sort">
+    <select name="sort" onchange="submit()">
       <option value="ISBN" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "ISBN") echo "selected" ?>>ISBN</option>
       <option value="publish" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "publish") echo "selected" ?>>出版社</option>
       <option value="bookname" <?php if(isset($_GET["sort"]) && $_GET["sort"] == "bookname") echo "selected" ?>>書名</option>
@@ -17,9 +20,8 @@
     </select>
     方向
     <select name="method" onchange="submit()">
-      <option>--請選擇--</option>
-      <option>ASC</option>
-      <option>DESC</option>
+      <option <?php if(isset($_GET["method"]) && $_GET["method"] == "ASC") echo "selected" ?>>ASC</option>
+      <option <?php if(isset($_GET["method"]) && $_GET["method"] == "DESC") echo "selected" ?>>DESC</option>
     </select>
   </p>
 </form>
@@ -79,10 +81,12 @@ while($row = mysqli_fetch_row($result)){
 <?php
 echo "</tr>";
 }
-//將所有書籍資料寫入txt檔
-$filename = "bookInfo.txt";
-$fp = fopen($filename,'w') or exit("檔案 $filename 開啟錯誤</br>");
-fwrite($fp,$content);
+if(empty($_GET["sort"]) && empty($_GET["method"])){
+  //將所有書籍資料寫入txt檔
+  $filename = "bookInfo.txt";
+  $fp = fopen($filename,'w') or exit("檔案 $filename 開啟錯誤</br>");
+  fwrite($fp,$content);
+}
 ?>
 </table>
 <a href="add.php" class="addBtn"><button>ADD</button></a>
