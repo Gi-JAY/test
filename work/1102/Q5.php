@@ -1,7 +1,7 @@
 <?php
     session_start();
 ?>
-<form action="/dashboard/phpTest/work/1102/Q5.php" method="POST">
+<form action="" method="POST">
     <input type="text" name="n">
     <input type="submit" value="送出">
 </form>
