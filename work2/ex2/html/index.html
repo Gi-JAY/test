@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show">
+        <div id="file">
+            <form action="" method="post" enctype="multipart/form-data">
+
+            </form>
+        </div>
+        <div id="search">
+            排序方式
+            <select name="group" id="" onchange="gotoLink()">
+                <option>ISBN</option>
+                <option value="publish" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publish') ?'selected':''; ?>>出版社</option>
+                <option value="bookname" <?php echo(isset($_GET['group']) && $_GET['group'] === 'bookname') ?'selected':''; ?>>書名</option>
+                <option value="author" <?php echo(isset($_GET['group']) && $_GET['group'] === 'author') ?'selected':''; ?>>作者</option>
+                <option value="price" <?php echo(isset($_GET['group']) && $_GET['group'] === 'price') ?'selected':''; ?>>定價</option>
+                <option value="publishday" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publishday') ?'selected':''; ?>>發行日</option>
+            </select>
+            方向
+            <select name="sort" id="" onchange="gotoLink()">
+                <option value="ASC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'ASC') ?'selected':''; ?>>ASC</option>
+                <option value="DESC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'DESC') ?'selected':''; ?>>DESC</option>
+            </select>
+        </div>
+        <div id="showInfo">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>ISBN</td>
+                        <td>出版社</td>
+                        <td>書名</td>
+                        <td>作者</td>
+                        <td>定價</td>
+                        <td>發行日</td>
+                        <td>編輯/刪除</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    for($i = 0; $i < $data_total; $i++){
+                        echo "<tr>";
+                        foreach($data[$i] as $key => $value){
+                            if($key !== 'id'){
+                                echo "<td>$value</td>";
+                            }
+                        }
+                        echo "<td><a href='edit?id=".$data[$i]['id']."'><button style='margin-right: 3px;'>編輯</button></a>";
+                        echo "<a href='delete?id=".$data[$i]['id']."'><button>刪除</button></a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', ()=>{
+            tableWidth = document.querySelector('#showInfo table').offsetWidth;
+            document.getElementById('search').style.width = tableWidth + 'px';
+        })
+        function gotoLink(){
+                let group = document.getElementsByName('group')[0].value;
+                let sort = document.getElementsByName('sort')[0].value
+                let URL = "index.php?group="+group+"&sort="+sort;
+
+                location.href = URL;
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post"></form>
+    <script>
+        let a = [3,2,1,2];
+        let b = a.filter((item, index, arr) => a.indexOf(item) !== index);
+        console.log(b);
+        function check(){
+            const input = document.getElementsByTagName('num')[0].value;
+            if(!/^[\d]+$/.test(input)){
+                alert('請輸入正整數');
+                return false;
+            }else{
+                if(input%2 == 0){
+                    alert('請輸入奇數');
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
