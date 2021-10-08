@@ -1,7 +1,19 @@
-#search{
+#bookOption{
+    display: flex;
+    justify-content: space-between;
     margin: auto;
-    text-align: right;
+}
+#file{
+    position: relative;
+    top: 15px;
+}
+#search{
+    align-self: flex-end;
 }
 #showInfo table{
     margin: auto;
+}
+#wrap{
+    display: flex;
+    justify-content: center;
 }

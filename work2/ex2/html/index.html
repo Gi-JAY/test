@@ -9,26 +9,32 @@
 </head>
 <body>
     <div id="show">
-        <div id="file">
-            <form action="" method="post" enctype="multipart/form-data">
-
-            </form>
-        </div>
-        <div id="search">
-            排序方式
-            <select name="group" id="" onchange="gotoLink()">
-                <option>ISBN</option>
-                <option value="publish" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publish') ?'selected':''; ?>>出版社</option>
-                <option value="bookname" <?php echo(isset($_GET['group']) && $_GET['group'] === 'bookname') ?'selected':''; ?>>書名</option>
-                <option value="author" <?php echo(isset($_GET['group']) && $_GET['group'] === 'author') ?'selected':''; ?>>作者</option>
-                <option value="price" <?php echo(isset($_GET['group']) && $_GET['group'] === 'price') ?'selected':''; ?>>定價</option>
-                <option value="publishday" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publishday') ?'selected':''; ?>>發行日</option>
-            </select>
-            方向
-            <select name="sort" id="" onchange="gotoLink()">
-                <option value="ASC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'ASC') ?'selected':''; ?>>ASC</option>
-                <option value="DESC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'DESC') ?'selected':''; ?>>DESC</option>
-            </select>
+        <div id="bookOption">
+            <div id="file">
+                <form action="importBook.php" method="post" enctype="multipart/form-data">
+                    <label>
+                        匯入資料:
+                        <input type="file" name="bookMark" id="">
+                    </label>
+                </form>
+                <p>匯出資料:<a href="outputFile.php"><button>匯出</button></a></p>
+            </div>
+            <div id="search">
+                排序方式
+                <select name="group" id="" onchange="gotoLink()">
+                    <option>ISBN</option>
+                    <option value="publish" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publish') ?'selected':''; ?>>出版社</option>
+                    <option value="bookname" <?php echo(isset($_GET['group']) && $_GET['group'] === 'bookname') ?'selected':''; ?>>書名</option>
+                    <option value="author" <?php echo(isset($_GET['group']) && $_GET['group'] === 'author') ?'selected':''; ?>>作者</option>
+                    <option value="price" <?php echo(isset($_GET['group']) && $_GET['group'] === 'price') ?'selected':''; ?>>定價</option>
+                    <option value="publishday" <?php echo(isset($_GET['group']) && $_GET['group'] === 'publishday') ?'selected':''; ?>>發行日</option>
+                </select>
+                方向
+                <select name="sort" id="" onchange="gotoLink()">
+                    <option value="ASC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'ASC') ?'selected':''; ?>>ASC</option>
+                    <option value="DESC" <?php echo(isset($_GET['sort']) && $_GET['sort'] === 'DESC') ?'selected':''; ?>>DESC</option>
+                </select>
+            </div>
         </div>
         <div id="showInfo">
             <table border="1">
@@ -62,10 +68,14 @@
             </table>
         </div>
     </div>
+    <div id="wrap" style="margin-top: 5px;">
+        <a href="creat.php"><button>新增</button></a>
+    </div>
     <script>
         window.addEventListener('load', ()=>{
             tableWidth = document.querySelector('#showInfo table').offsetWidth;
-            document.getElementById('search').style.width = tableWidth + 'px';
+            fileHieght = document.getElementById('file').offsetHeight;
+            document.getElementById('bookOption').style.width = tableWidth + 'px';
         })
         function gotoLink(){
                 let group = document.getElementsByName('group')[0].value;
@@ -73,7 +83,7 @@
                 let URL = "index.php?group="+group+"&sort="+sort;
 
                 location.href = URL;
-            }
+        }
     </script>
 </body>
 </html>
