@@ -14,7 +14,7 @@
                 <form action="importBook.php" method="post" enctype="multipart/form-data">
                     <label>
                         匯入資料:
-                        <input type="file" name="bookMark" id="">
+                        <input type="file" name="bookMark" id="filename" onchange="submitCheck()">
                     </label>
                 </form>
                 <p>匯出資料:<a href="outputFile.php"><button>匯出</button></a></p>
@@ -83,6 +83,13 @@
                 let URL = "index.php?group="+group+"&sort="+sort;
 
                 location.href = URL;
+        }
+
+        function submitCheck(){
+            file = document.getElementById('filename').value;
+            if(file !== ''){
+                document.forms[0].submit();
+            }
         }
     </script>
 </body>

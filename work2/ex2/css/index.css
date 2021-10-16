@@ -7,13 +7,22 @@
     position: relative;
     top: 15px;
 }
+#file button{
+    cursor: pointer;
+}
 #search{
     align-self: flex-end;
 }
 #showInfo table{
     margin: auto;
 }
+#showInfo table button{
+    cursor: pointer;
+}
 #wrap{
     display: flex;
     justify-content: center;
+}
+#wrap button{
+    cursor: pointer;
 }
