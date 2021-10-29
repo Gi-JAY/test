@@ -1,6 +1,7 @@
 <?php
 require 'public/function.php';
 if(isset($_FILES['bookMark']['name'])){
+    $rowCounter = 1;
     $bookContent = array();
     $fp = fopen($_FILES['bookMark']['tmp_name'],'r');
     if($fp){
@@ -8,9 +9,9 @@ if(isset($_FILES['bookMark']['name'])){
             $bookContent[] = fgets($fp, 1024);
         }
         foreach($bookContent as $value){
-            contentCheck($value);
+            contentCheck($value, $rowCounter);
+            $rowCounter ++;
         }
-        // header('location:index.php');
     }else{
         exit('無法開啟檔案');
     }
@@ -18,7 +19,7 @@ if(isset($_FILES['bookMark']['name'])){
 
 }
 
-function contentCheck($content){
+function contentCheck($content, $rowCounter){
     $check = false;
     $input_value = explode(',', $content);
     //刪除空白行
@@ -31,13 +32,7 @@ function contentCheck($content){
         return;
     }
 
-    foreach($input as $key => $value){
-        if(trim($value) === '') 
-            unset($input[$key]);
-    }
-    print_r($input);
     $check_empty = array();
-    $check_colum = array();
     $check_str = "";
     unset($input_tmp);
     unset($input_value);
@@ -46,11 +41,11 @@ function contentCheck($content){
     foreach($input as $key => $value){
         $value = trim($value);
         $input[$key] = $value;
-        if($value === '') $check_empty[] = $key;
-    }
-    if(!empty($check_empty)){
-        foreach($check_empty as $key => $vlaue){
-            switch($value){
+        if($value === '') {
+            switch($key){
+                case 'ISBN':
+                    $check_empty[$key] = 'ISBN';
+                    break;
                 case 'publish':
                     $check_empty[$key] = '出版社';
                     break;
@@ -68,12 +63,15 @@ function contentCheck($content){
                     break;
             }
         }
-
+    }
+    // print_r($input);
+    if(!empty($check_empty)){
         foreach($check_empty as $value){
-            $check_str += "${value}尚未填寫\\n";
+            $check_str .= "${value}尚未填寫\\n";
         }
-        js_alert($check_str);
-        header('location:index.php');
+        write_log("第${rowCounter}筆資料\r".$check_str);
+        js_alert("第${rowCounter}筆資料\\n".$check_str);
+        go_index();
     }
     if(preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{3}-{0-9}{1}$/',$input['ISBN'])) 
         $check = true;
