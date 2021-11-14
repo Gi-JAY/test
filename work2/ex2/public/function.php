@@ -9,10 +9,18 @@ function go_index(){
     echo "<script>window.location.href = 'index.php'</script>\n";
 }
 function write_log($log_str){
-    $fp = fopen('./log/book_error_log.txt','a');
+    $fp = fopen('./log/book_error_log.txt',"a");
     if($fp){
         $log_str = str_replace("\\n", "\r", $log_str);
-        fwrite($fp, date('Y-m-d').' ');
+        // fwrite($fp, "-----------------------");
+        // rewind($fp);
+        // fwrite($fp, "\r");
+        // rewind($fp);
+        // fwrite($fp, $log_str);
+        // rewind($fp);
+        // fwrite($fp, '  ');
+        // rewind($fp);
+        fwrite($fp, date('Y-m-d')."\r");
         fwrite($fp, $log_str."-----------------------\r");
         fclose($fp);
     }
