@@ -70,8 +70,8 @@ function contentCheck($content, $rowCounter){
             $check_str .= "${value}尚未填寫\\n";
         }
         write_log("第${rowCounter}筆資料\r".$check_str);
-        js_alert("第${rowCounter}筆資料\\n".$check_str);
-        go_index();
+        js_alert('資料輸入有誤，請至日誌查看');
+        // go_index();
     }
     if(preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{3}-{0-9}{1}$/',$input['ISBN'])) 
         $check = true;
