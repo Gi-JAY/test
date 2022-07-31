@@ -1,0 +1,10 @@
+{
+    "name": "vendor/hero",
+    "autoload": {
+        "psr-4": {
+            "Hero\\": "class2/",
+            "Skill\\": "class2/"
+        }
+    },
+    "require": {}
+}
