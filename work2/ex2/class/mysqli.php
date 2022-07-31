@@ -4,12 +4,16 @@ class db{
     public $result = 0;
 
     function __construct($host, $account, $password, $dbname){
-        @$link = mysqli_connect($host, $account, $pasword, $dbname);
+        @$link = mysqli_connect($host, $account, $password);
         if(!$link){
             die('mysqli error');
         }else{
-            $this->link = $link;
-            mysqli_query($link, "SET NAMES utf8");
+            if(mysqli_select_db($link, 'work')){
+                $this->link = $link;
+                mysqli_query($link, "SET NAMES utf8");
+            }
+            else
+                die('db is not exist');
         }
     }
 
@@ -21,15 +25,17 @@ class db{
 
     /** Get array return by mysqli */
     function fetch_row($action=0){
-        switch($action){
-            case 0:
-                return mysqli_fetch_row($this->result);
-            case 1:
-                return mysqli_fetch_assoc($this->result);
-            case 2:
-                return mysqli_fetch_array($this->result);
-            default:
-            return mysqli_fetch_row($this->result);
+        if($this->result){
+            switch($action){
+                case 0:
+                    return mysqli_fetch_row($this->result);
+                case 1:
+                    return mysqli_fetch_assoc($this->result);
+                case 2:
+                    return mysqli_fetch_array($this->result);
+                default:
+                    return mysqli_fetch_row($this->result);
+            }
         }
         // match($action){
         //     0 => mysqli_fetch_row($this->result),

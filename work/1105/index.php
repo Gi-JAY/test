@@ -1,13 +1,13 @@
 <?php session_start(); ?>
 <link rel="stylesheet" href="./css/style.css">
-<form action="/dashboard/phpTest/work/1105/index.php" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
   <p>
     匯入資料：<input type="file" name="Filename">
     <input type="submit" value="匯入" class="import">
   </p>
 </form>
 資料匯出：<a href="getInfo.php" class="export"><button>匯出</button></a>
-<form action="/dashboard/phpTest/work/1105/index.php" method="GET" class="sort">
+<form action="" method="GET" class="sort">
   <p>
     排序
     <select name="sort" onchange="submit()">

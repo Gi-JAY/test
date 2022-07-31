@@ -15,7 +15,7 @@ class db
 	}
 	function query($sql){
 		if (! $queryResource = mysqli_query($this->_dbConn,$sql))
-			die ("mysqli Query Error");
+			echo mysqli_error($this->_dbConn);
 		$this->_queryResource = $queryResource;
 		return $queryResource;        
 	}
