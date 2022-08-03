@@ -2,9 +2,14 @@
     "name": "vendor/hero",
     "autoload": {
         "psr-4": {
-            "Hero\\": "class2/",
-            "Skill\\": "class2/"
+            "Vendor\\Hero\\": "class2/"
         }
     },
+    "authors": [
+        {
+            "name": "jay",
+            "email": "asdeclf2@gmail.com"
+        }
+    ],
     "require": {}
 }

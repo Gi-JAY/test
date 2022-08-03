@@ -1,5 +1,5 @@
 <?php
-namespace class2\Hero;
+namespace Vendor\Hero\class2\Hero;
 
 class Hero
 {

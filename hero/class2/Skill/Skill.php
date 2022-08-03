@@ -1,5 +1,5 @@
 <?php
-namespace class2\Skill;
+namespace Vendor\Hero\class2\Skill;
 
 abstract class  Skill
 {

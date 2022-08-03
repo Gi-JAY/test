@@ -1,5 +1,5 @@
 <?php
-namespace class2\Skill;
+namespace Vendor\Hero\class2\Skill;
 
 class SpiralPills extends Skill
 {

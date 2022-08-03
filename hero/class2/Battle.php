@@ -1,7 +1,7 @@
 <?php
-namespace class2;
+namespace Vendor\Hero\class2;
 
-use class2\Hero\Hero;
+use Vendor\Hero\class2\Hero\Hero;
 
 class Battle
 {
